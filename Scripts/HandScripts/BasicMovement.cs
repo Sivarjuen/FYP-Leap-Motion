@@ -7,10 +7,10 @@ using Leap.Unity;
 public class BasicMovement : MonoBehaviour {
 
 	Controller controller;
-	float HandPalmPitch;
+	//float HandPalmPitch;
 	float HandPalmYaw;
-	float HandPalmRoll;
-	float HandWristRot;
+	//float HandPalmRoll;
+	//float HandWristRot;
 
 	// Use this for initialization
 	void Start () {
@@ -24,11 +24,10 @@ public class BasicMovement : MonoBehaviour {
 		List<Hand> hands = frame.Hands;
 		if(frame.Hands.Count > 0){
 			Hand firstHand = hands[0];
-			HandPalmPitch = firstHand.PalmNormal.Pitch;
+			//HandPalmPitch = firstHand.PalmNormal.Pitch;
 			HandPalmYaw = firstHand.PalmNormal.Yaw;
-			HandPalmRoll = firstHand.PalmNormal.Roll;
-
-			HandWristRot = hands[0].WristPosition.Pitch;
+			//HandPalmRoll = firstHand.PalmNormal.Roll;
+			//HandWristRot = hands[0].WristPosition.Pitch;
 
 			//Debug.Log("Pitch :" + HandPalmPitch);
 			//Debug.Log("Roll :" + HandPalmRoll);
