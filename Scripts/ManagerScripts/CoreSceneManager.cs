@@ -6,30 +6,31 @@ using UnityEngine.UI;
 public class CoreSceneManager : MonoBehaviour {
 
 	private Text text;
-	public GameObject handModels;
-	private float timeLeft = 3.0f;
+	public GameObject textObj, textPanel, handModels;
 
 	private void Awake() {
-        text = GameObject.Find("IntroText").GetComponent<Text>();
-		//handModels = GameObject.Find("Rigged Hand Models");
+		textObj = GameObject.Find("IntroText");
+		textPanel = GameObject.Find("TextPanel");
+        text = textObj.GetComponent<Text>();
+		textObj.SetActive(false);
+		textPanel.SetActive(false);
 	}
 
 	IEnumerator Start () {
-        // Start function WaitAndPrint as a coroutine
+        handModels.SetActive(false);
         yield return StartCoroutine("TextUpdate");
-        print("Done " + Time.time);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-
 	}
 
 	IEnumerator TextUpdate() {
 		// Time to start
-		//timeLeft -= Time.deltaTime;
 		yield return new WaitForSeconds(5);
+		textObj.SetActive(true);
+		textPanel.SetActive(true);
 		text.text = "Welcome";
 		yield return new WaitForSeconds(4);
 		text.text = "";
