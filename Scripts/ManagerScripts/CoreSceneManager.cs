@@ -28,7 +28,7 @@ public class CoreSceneManager : MonoBehaviour {
 
 	IEnumerator TextUpdate() {
 		// Time to start
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(3);
 		textObj.SetActive(true);
 		textPanel.SetActive(true);
 		text.text = "Welcome";
