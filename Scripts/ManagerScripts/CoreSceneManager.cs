@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CoreSceneManager : MonoBehaviour {
 
 	private Text text;
-	public GameObject textObj, textPanel, handModels;
+	public GameObject textObj, textPanel, handModels, secondaryHandModels, leapMotion;
 
 	private void Awake() {
 		textObj = GameObject.Find("IntroText");
@@ -18,6 +18,8 @@ public class CoreSceneManager : MonoBehaviour {
 
 	IEnumerator Start () {
         handModels.SetActive(false);
+		secondaryHandModels.SetActive(false);
+		leapMotion.SetActive(false);
         yield return StartCoroutine("TextUpdate");
 	}
 	
@@ -36,19 +38,28 @@ public class CoreSceneManager : MonoBehaviour {
 		text.text = "";
 		yield return new WaitForSeconds(0.2f);
 		text.text = "Hand tracking will be enabled shortly";
-		yield return new WaitForSeconds(8);
+		yield return new WaitForSeconds(6);
 		text.text = "";
 		yield return new WaitForSeconds(0.2f);
 		text.text = "Remember that the LEAP Motion Controller can only track what it sees";
-		yield return new WaitForSeconds(8);
+		yield return new WaitForSeconds(7);
 		text.text = "";
 		yield return new WaitForSeconds(0.2f);
 		text.text = "So make sure any actions you perform can be seen clearly by the device";
-		yield return new WaitForSeconds(8);
+		yield return new WaitForSeconds(7);
 		text.text = "";
 		yield return new WaitForSeconds(0.2f);
 		text.text = "Hand tracking is now enabled";
+		leapMotion.SetActive(true);
 		handModels.SetActive(true);
+		yield return new WaitForSeconds(4);
+		text.text = "";
+		yield return new WaitForSeconds(0.2f);
+		text.text = "Feel free to move your hand around and get a feel for the Leap Motion's capabilities";
+		yield return new WaitForSeconds(7);
+		text.text = "";
+		yield return new WaitForSeconds(0.2f);
+		text.text = "When you have finished point towards the 'Continue' button with one of your index fingers to move to the next stage";
 
 		yield return null;
 	}
