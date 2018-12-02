@@ -39,19 +39,19 @@ namespace Leap.Unity.InputModule {
     /** The cursor material. */
     public Material PointerMaterial;
     [Tooltip("The color of the pointer when it is hovering over blank canvas.")]
-    [ColorUsageAttribute(true, false, 0, 8, 0.125f, 3)]
+    [ColorUsageAttribute(true, false)]
     /** The color for the cursor when it is not in a special state. */
     public Color StandardColor = Color.white;
     [Tooltip("The color of the pointer when it is hovering over any other UI element.")]
-    [ColorUsageAttribute(true, false, 0, 8, 0.125f, 3)]
+    [ColorUsageAttribute(true, false)]
     /** The color for the cursor when it is hovering over a control. */
     public Color HoveringColor = Color.green;
     [Tooltip("The color of the pointer when it is triggering a UI element.")]
-    [ColorUsageAttribute(true, false, 0, 8, 0.125f, 3)]
+    [ColorUsageAttribute(true, false)]
     /** The color for the cursor when it is actively interacting with a control. */
     public Color TriggeringColor = Color.gray;
     [Tooltip("The color of the pointer when it is triggering blank canvas.")]
-    [ColorUsageAttribute(true, false, 0, 8, 0.125f, 3)]
+    [ColorUsageAttribute(true, false)]
     /** The color for the cursor when it is touching or triggering a non-active part of the UI (such as the canvas). */
     public Color TriggerMissedColor = Color.gray;
 
@@ -248,8 +248,9 @@ namespace Leap.Unity.InputModule {
           PointerLines[index] = pointer.AddComponent<LineRenderer>();
           PointerLines[index].material = Instantiate(PointerMaterial);
           PointerLines[index].material.color = new Color(0f, 0f, 0f, 0f);
-          PointerLines[index].SetVertexCount(2);
-          PointerLines[index].SetWidth(0.001f, 0.001f);
+          PointerLines[index].positionCount = 2;
+          PointerLines[index].startWidth = 0.001f;
+          PointerLines[index].endWidth = 0.001f;
         }
 
         Pointers[index] = pointer.GetComponent<Transform>();

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CoreSceneManager : MonoBehaviour {
 
 	private Text text;
-	public GameObject textObj, textPanel, handModels, secondaryHandModels, leapMotion;
+	public GameObject textObj, textPanel, handModels, secondaryHandModels, leapMotion, continueButton;
 
 	private void Awake() {
 		textObj = GameObject.Find("IntroText");
@@ -14,6 +14,7 @@ public class CoreSceneManager : MonoBehaviour {
         text = textObj.GetComponent<Text>();
 		textObj.SetActive(false);
 		textPanel.SetActive(false);
+		continueButton.SetActive(false);
 	}
 
 	IEnumerator Start () {
@@ -49,18 +50,24 @@ public class CoreSceneManager : MonoBehaviour {
 		yield return new WaitForSeconds(7);
 		text.text = "";
 		yield return new WaitForSeconds(0.2f);
+		text.color = Color.green;
 		text.text = "Hand tracking is now enabled";
 		leapMotion.SetActive(true);
 		handModels.SetActive(true);
 		yield return new WaitForSeconds(4);
 		text.text = "";
 		yield return new WaitForSeconds(0.2f);
-		text.text = "Feel free to move your hand around and get a feel for the Leap Motion's capabilities";
+		text.color = Color.white;
+		text.text = "Feel free to move your hand around to get a feel for the Leap Motion's capabilities";
 		yield return new WaitForSeconds(7);
 		text.text = "";
 		yield return new WaitForSeconds(0.2f);
-		text.text = "When you have finished point towards the 'Continue' button with one of your index fingers to move to the next stage";
-
+		text.text = "When you have finished point towards the 'Continue' button with one of your index fingers to move on to the next stage";
+		continueButton.SetActive(true);
+		yield return new WaitForSeconds(7);
+		text.text = "";
+		textObj.SetActive(false);
+		textPanel.SetActive(false);
 		yield return null;
 	}
 
