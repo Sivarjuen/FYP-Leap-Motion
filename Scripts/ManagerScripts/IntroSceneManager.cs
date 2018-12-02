@@ -3,25 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CoreSceneManager : MonoBehaviour {
+public class IntroSceneManager : MonoBehaviour {
 
 	private Text text;
-	public GameObject textObj, textPanel, handModels, secondaryHandModels, leapMotion, continueButton;
+	public Button button;
+	public GameObject textObj, textPanel, handModels, secondaryHandModels, leapMotion, buttonObj, cube;
 
 	private void Awake() {
+		//Get GameObjects
 		textObj = GameObject.Find("IntroText");
 		textPanel = GameObject.Find("TextPanel");
+		cube = GameObject.Find("Cube");
+
         text = textObj.GetComponent<Text>();
+
 		textObj.SetActive(false);
 		textPanel.SetActive(false);
-		continueButton.SetActive(false);
+		buttonObj.SetActive(false);
+		cube.SetActive(false);
+		handModels.SetActive(false);
+		secondaryHandModels.SetActive(false);
+		leapMotion.SetActive(false);
+
+				
 	}
 
 	IEnumerator Start () {
-        handModels.SetActive(false);
-		secondaryHandModels.SetActive(false);
-		leapMotion.SetActive(false);
-        yield return StartCoroutine("TextUpdate");
+        button.onClick.AddListener(continuePressed);
+        yield return StartCoroutine("Intro");
 	}
 	
 	// Update is called once per frame
@@ -29,7 +38,7 @@ public class CoreSceneManager : MonoBehaviour {
 
 	}
 
-	IEnumerator TextUpdate() {
+	IEnumerator Intro() {
 		// Time to start
 		yield return new WaitForSeconds(3);
 		textObj.SetActive(true);
@@ -63,7 +72,7 @@ public class CoreSceneManager : MonoBehaviour {
 		text.text = "";
 		yield return new WaitForSeconds(0.2f);
 		text.text = "When you have finished point towards the 'Continue' button with one of your index fingers to move on to the next stage";
-		continueButton.SetActive(true);
+		buttonObj.SetActive(true);
 		yield return new WaitForSeconds(7);
 		text.text = "";
 		textObj.SetActive(false);
@@ -71,10 +80,13 @@ public class CoreSceneManager : MonoBehaviour {
 		yield return null;
 	}
 
-	IEnumerator WaitAndPrint()
-    {
-        // suspend execution for 5 seconds
-        yield return new WaitForSeconds(5);
-        print("WaitAndPrint " + Time.time);
-    }
+	void continuePressed(){
+		StartCoroutine("Interaction");
+	}
+
+	IEnumerator Interaction() {
+		cube.SetActive(true);
+		
+		yield return null;
+	}
 }

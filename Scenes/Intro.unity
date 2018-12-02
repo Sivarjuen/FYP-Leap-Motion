@@ -458,6 +458,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1061253654325814, guid: c46f2b040eeda444fbd1eeb629012bbe, type: 2}
+      propertyPath: m_Name
+      value: Cube
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c46f2b040eeda444fbd1eeb629012bbe, type: 2}
   m_IsPrefabAsset: 0
@@ -758,12 +762,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3729b72bcf40f45a697dcf3e4880c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 1901187009}
   textObj: {fileID: 1405047193}
   textPanel: {fileID: 247931558}
   handModels: {fileID: 2105414996}
   secondaryHandModels: {fileID: 1090672910}
   leapMotion: {fileID: 67517182}
-  continueButton: {fileID: 1585764204}
+  buttonObj: {fileID: 1585764204}
+  cube: {fileID: 1878979491}
 --- !u!4 &862776173
 Transform:
   m_ObjectHideFlags: 0
@@ -1778,6 +1784,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1800565777}
   m_CullTransparentMesh: 0
+--- !u!1 &1878979491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1061253654325814, guid: c46f2b040eeda444fbd1eeb629012bbe,
+    type: 2}
+  m_PrefabInternal: {fileID: 316405445}
 --- !u!1 &1901187007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,6 +2720,16 @@ Prefab:
       propertyPath: m_TargetDisplay
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114074347332742310, guid: 2fb3f37bed4bc854bb2b534d625d18d5,
+        type: 2}
+      propertyPath: _leapProvider
+      value: 
+      objectReference: {fileID: 2135969813}
+    - target: {fileID: 114934403691026468, guid: 2fb3f37bed4bc854bb2b534d625d18d5,
+        type: 2}
+      propertyPath: _leapProvider
+      value: 
+      objectReference: {fileID: 2135969813}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fb3f37bed4bc854bb2b534d625d18d5, type: 2}
   m_IsPrefabAsset: 0

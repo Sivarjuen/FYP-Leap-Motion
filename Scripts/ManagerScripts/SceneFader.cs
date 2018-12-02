@@ -2,6 +2,11 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
+// Scene Fader code adapted from gamedevelopertips.com (Marco)
+
+// When loading new scene use:
+// StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.Out, Constants.SceneName.GAME_SCENE));
+
 public class SceneFader : MonoBehaviour
 {
     #region FIELDS
