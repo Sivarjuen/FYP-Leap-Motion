@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class IntroSceneManager : MonoBehaviour {
+public class IntroSceneController : MonoBehaviour {
 
 	private Text text;
 	public Button button;
-	public GameObject textObj, textPanel, handModels, secondaryHandModels, leapMotion, buttonObj, cube;
+	public GameObject textObj, textPanel, handModels, leapMotion, buttonObj, cube;
 
 	private void Awake() {
 		//Get GameObjects
@@ -22,10 +22,7 @@ public class IntroSceneManager : MonoBehaviour {
 		buttonObj.SetActive(false);
 		cube.SetActive(false);
 		handModels.SetActive(false);
-		secondaryHandModels.SetActive(false);
-		leapMotion.SetActive(false);
-
-				
+		leapMotion.SetActive(false);	
 	}
 
 	IEnumerator Start () {
