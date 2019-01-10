@@ -13,6 +13,7 @@ namespace Leap.Unity.InputModule {
   public class LeapInputModule : BaseInputModule {
     //General Interaction Parameters
     [Header(" Interaction Setup")]
+    public MenuController MenuController;
     [Tooltip("The current Leap Data Provider for the scene.")]
     /** The LeapProvider providing tracking data to the scene. */
     public LeapProvider LeapDataProvider;
@@ -149,7 +150,7 @@ namespace Leap.Unity.InputModule {
     public float InnerPointerOpacityScalar = 0.77f;
     [Tooltip("Trigger a Hover Event when switching between UI elements.")]
     /** Trigger a Hover Event when switching between UI elements.*/
-    public bool TriggerHoverOnElementSwitch = false;
+    public bool TriggerHoverOnElementSwitch = true; //Might need to check this
     [Tooltip("If the ScrollView still doesn't work even after disabling RaycastTarget on the intermediate layers.")]
     /** If the ScrollView still doesn't work even after disabling RaycastTarget on the intermediate layers.*/
     public bool OverrideScrollViewClicks = false;
@@ -362,7 +363,8 @@ namespace Leap.Unity.InputModule {
               ProjectionOrigin = OldCameraPos + CurrentRotation * new Vector3(0.15f, -0.2f, 0f);
               break;
             case false:
-              ProjectionOrigin = OldCameraPos + CurrentRotation * new Vector3(-0.15f, -0.2f, 0f);
+              //ProjectionOrigin = OldCameraPos + CurrentRotation * new Vector3(-0.15f, -0.2f, 0f);
+              ProjectionOrigin = OldCameraPos + CurrentRotation * new Vector3(-0.05f, -0.03f, 0f);
               break;
           }
         }
@@ -654,8 +656,10 @@ namespace Leap.Unity.InputModule {
 
         //Else Raycast through the knuckle of the Index Finger
       } else {
-        Camera.main.transform.position = Origin;
-        IndexFingerPosition = curFrame.Hands[whichHand].Fingers[whichFinger].Bone(Bone.BoneType.TYPE_METACARPAL).Center.ToVector3();
+        //Camera.main.transform.position = Origin;
+        //IndexFingerPosition = curFrame.Hands[whichHand].Fingers[whichFinger].Bone(Bone.BoneType.TYPE_METACARPAL).Center.ToVector3();
+        //Camera.main.transform.position = ;
+        IndexFingerPosition = curFrame.Hands[whichHand].Fingers[whichFinger].TipPosition.ToVector3();
       }
 
       //Draw Camera Origin
@@ -667,6 +671,7 @@ namespace Leap.Unity.InputModule {
 
       //Set the Raycast Direction and Delta
       PointEvents[whichPointer].position = Vector2.Lerp(PrevScreenPosition[whichPointer], Camera.main.WorldToScreenPoint(IndexFingerPosition), 1.0f);//new Vector2(Screen.width / 2, Screen.height / 2);
+
       PointEvents[whichPointer].delta = (PointEvents[whichPointer].position - PrevScreenPosition[whichPointer]) * -10f;
       PointEvents[whichPointer].scrollDelta = Vector2.zero;
 
@@ -740,11 +745,40 @@ namespace Leap.Unity.InputModule {
             //When you begin to hover on an element
             SoundPlayer.PlayOneShot(BeginHoverSound);
             onHover.Invoke(Pointers[whichPointer].transform.position);
+            
           }
         }
       }
 
       //Warning: Horrible State Machine ahead...
+     if (pointerState[whichPointer] == pointerStates.OnElement) {
+        
+        switch(PointEvents[whichPointer].pointerCurrentRaycast.gameObject.tag){
+          case "HighscoreButton":
+            MenuController.startedHovering("scoreSlider");
+            break;
+          case "OptionsButton":
+            MenuController.startedHovering("optionsSlider");
+            break;
+          case "ExitButton":
+            MenuController.startedHovering("exitSlider");
+            break;
+          case "LeftRoom":
+            MenuController.startedHovering("leftSlider");
+            break;
+          case "RightRoom":
+            MenuController.startedHovering("rightSlider");
+            break;
+          default:
+            Debug.Log("Hovering over non-interactive elements");
+            break;
+        }
+      } else {
+        //When you stop hovering over an element
+        MenuController.stoppedHovering();
+      }
+
+
       if (PrevState[whichPointer] == pointerStates.OnCanvas) {
         if (pointerState[whichPointer] == pointerStates.OnElement) {
           //When you go from hovering on the Canvas to hovering on an element
