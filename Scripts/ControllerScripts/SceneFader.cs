@@ -11,7 +11,7 @@ public class SceneFader : MonoBehaviour
 {
     #region FIELDS
     public Image fadeOutUIImage;
-    public float fadeSpeed = 0.8f;
+    public float fadeSpeed = 0.2f;
     public enum FadeDirection
     {
         In, //Alpha = 1
@@ -51,7 +51,7 @@ public class SceneFader : MonoBehaviour
     }
     #endregion
     #region HELPERS
-    public IEnumerator FadeAndLoadScene(FadeDirection fadeDirection, string sceneToLoad)
+    public IEnumerator FadeAndLoadScene(FadeDirection fadeDirection, int sceneToLoad)
     {
         yield return Fade(fadeDirection);
         SceneManager.LoadScene(sceneToLoad);

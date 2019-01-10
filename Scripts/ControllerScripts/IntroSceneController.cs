@@ -2,37 +2,54 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
-public class IntroSceneController : MonoBehaviour {
+public class IntroSceneController : AbstractController {
 
-	private Text text;
-	public Button button;
-	public GameObject textObj, textPanel, handModels, leapMotion, buttonObj, cube;
+	private TextMeshProUGUI text;
+	public GameObject textObj, textPanel, handModels, leapMotion, buttonObj, continueSliderObj;
+	private Slider continueSlider;
+
+	override protected void initialiseSlidersAndDicts(){
+		dict = new Dictionary<string, Slider>();
+		dict2 = new Dictionary<Slider, GameObject>();
+
+		continueSlider = continueSliderObj.GetComponent<Slider>();
+		dict.Add("continueSlider", continueSlider);
+		dict2.Add(continueSlider, continueSliderObj);
+	}
+
+	override protected void updateSliders(){
+		if(hovering){
+			if(dict[activeSlider].value < 1.0f){
+				float elapsed = Time.time - timer;
+				dict[activeSlider].value = elapsed / hoverDuration;
+			} else {
+				SceneManager.LoadScene(1);
+				// StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.Out, 1));
+			}
+		} else {
+			foreach(Slider slider in dict.Values){
+				slider.value = 0.0f;
+				deactivateSliders();
+			}
+		}
+	}
 
 	private void Awake() {
 		//Get GameObjects
 		textObj = GameObject.Find("IntroText");
 		textPanel = GameObject.Find("TextPanel");
-		cube = GameObject.Find("Cube");
 
-        text = textObj.GetComponent<Text>();
+        text = textObj.GetComponent<TextMeshProUGUI>();
 
 		textObj.SetActive(false);
 		textPanel.SetActive(false);
 		buttonObj.SetActive(false);
-		cube.SetActive(false);
 		handModels.SetActive(false);
 		leapMotion.SetActive(false);	
-	}
-
-	IEnumerator Start () {
-        button.onClick.AddListener(continuePressed);
-        yield return StartCoroutine("Intro");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
+		StartCoroutine("Intro");
 	}
 
 	IEnumerator Intro() {
@@ -74,16 +91,6 @@ public class IntroSceneController : MonoBehaviour {
 		text.text = "";
 		textObj.SetActive(false);
 		textPanel.SetActive(false);
-		yield return null;
-	}
-
-	void continuePressed(){
-		StartCoroutine("Interaction");
-	}
-
-	IEnumerator Interaction() {
-		cube.SetActive(true);
-		
 		yield return null;
 	}
 }

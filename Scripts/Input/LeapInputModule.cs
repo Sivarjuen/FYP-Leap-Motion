@@ -13,7 +13,7 @@ namespace Leap.Unity.InputModule {
   public class LeapInputModule : BaseInputModule {
     //General Interaction Parameters
     [Header(" Interaction Setup")]
-    public MenuController MenuController;
+    public AbstractController Controller;
     [Tooltip("The current Leap Data Provider for the scene.")]
     /** The LeapProvider providing tracking data to the scene. */
     public LeapProvider LeapDataProvider;
@@ -755,19 +755,22 @@ namespace Leap.Unity.InputModule {
         
         switch(PointEvents[whichPointer].pointerCurrentRaycast.gameObject.tag){
           case "HighscoreButton":
-            MenuController.startedHovering("scoreSlider");
+            Controller.startedHovering("scoreSlider");
             break;
           case "OptionsButton":
-            MenuController.startedHovering("optionsSlider");
+            Controller.startedHovering("optionsSlider");
             break;
           case "ExitButton":
-            MenuController.startedHovering("exitSlider");
+            Controller.startedHovering("exitSlider");
             break;
           case "LeftRoom":
-            MenuController.startedHovering("leftSlider");
+            Controller.startedHovering("leftSlider");
             break;
           case "RightRoom":
-            MenuController.startedHovering("rightSlider");
+            Controller.startedHovering("rightSlider");
+            break;
+          case "IntroContinueButton":
+            Controller.startedHovering("continueSlider");
             break;
           default:
             Debug.Log("Hovering over non-interactive elements");
@@ -775,7 +778,7 @@ namespace Leap.Unity.InputModule {
         }
       } else {
         //When you stop hovering over an element
-        MenuController.stoppedHovering();
+        Controller.stoppedHovering();
       }
 
 
