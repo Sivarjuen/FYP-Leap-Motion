@@ -2093,6 +2093,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.9
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 34a8c777480b59d4d9fd5c03817253c2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5a809871f6ad79949b188283dd3aa071, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34a8c777480b59d4d9fd5c03817253c2, type: 3}
   m_IsPrefabAsset: 0
@@ -3460,6 +3464,10 @@ Prefab:
       propertyPath: m_Name
       value: Left Door
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 5a809871f6ad79949b188283dd3aa071, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 34a8c777480b59d4d9fd5c03817253c2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a809871f6ad79949b188283dd3aa071, type: 3}
   m_IsPrefabAsset: 0
