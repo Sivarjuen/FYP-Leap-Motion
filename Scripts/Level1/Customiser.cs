@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class Customiser : Holder {
 
+	override protected void setRuneBall(RuneBall ball){
+		this.ball = ball;
+		containsBall = true;
+	}
+
 	public void onColourButtonPressed(){
 		if(containsBall && ball != null){
 			ball.changeColour();

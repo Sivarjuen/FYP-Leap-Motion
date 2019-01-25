@@ -4,11 +4,12 @@ using UnityEngine;
 
 public abstract class Holder : MonoBehaviour {
 
-	public CapsuleCollider collider;
 	public GameObject highlight;
 	protected bool containsBall = false;
 	protected RuneBall ball;
 	protected int colliding = 0;
+	protected bool locked = false;
+	
 
 	void Awake () {
 		highlight.SetActive(false);
@@ -33,24 +34,34 @@ public abstract class Holder : MonoBehaviour {
 	}
 
 	public void ChildTriggerExit(Collider collision) {
-		if(!containsBall){
-			GameObject go = collision.gameObject;
-			if(go.tag.Equals("RuneBall")){
-				colliding--;
-				if(colliding == 0){
-					highlight.SetActive(false);
-				}
+		GameObject go = collision.gameObject;
+		if(go.tag.Equals("RuneBall")){
+			colliding--;
+			if(colliding == 0){
+				highlight.SetActive(false);
+				containsBall = false;
+				ball = null;
 			}
 		}
 	}
 
 	public void ChildTriggerStay(Collider collision) {
-		//TODO - see if ball is dropped or not
+		if(!containsBall){
+			GameObject go = collision.gameObject;
+			if(go.tag.Equals("RuneBall")){
+				RuneBall runeBall = go.GetComponent<RuneBall>();
+				if(!runeBall.isGrasped()){
+					highlight.SetActive(false);
+					go.transform.position = transform.position; //TWEAK THIS
+					setRuneBall(runeBall);
+				}
+			}
+		}
 	}
 
-	public void setRuneBall(RuneBall ball){
-		this.ball = ball;
-	}
+	protected abstract void setRuneBall(RuneBall ball);
+
+	
 
 	//TODO When ball is in collider -> turn on highlighter while ball still grabbed. When let go release into defined spot.
 }
