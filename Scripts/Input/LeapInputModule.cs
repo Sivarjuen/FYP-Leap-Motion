@@ -773,7 +773,7 @@ namespace Leap.Unity.InputModule {
             Controller.startedHovering("continueSlider");
             break;
           default:
-            Debug.Log("Hovering over non-interactive elements");
+            //Debug.Log("Hovering over non-interactive elements");
             break;
         }
       } else {

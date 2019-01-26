@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Holder : MonoBehaviour {
 
 	public GameObject highlight;
+	public Transform ballPosition;
 	protected bool containsBall = false;
 	protected RuneBall ball;
 	protected int colliding = 0;
@@ -18,8 +19,10 @@ public abstract class Holder : MonoBehaviour {
 	void Start() {
 	}
 	
-	void Update () {
-		
+	void FixedUpdate () {
+		if(locked){
+			ball.freeze();
+		}
 	}
 
 	
@@ -52,7 +55,9 @@ public abstract class Holder : MonoBehaviour {
 				RuneBall runeBall = go.GetComponent<RuneBall>();
 				if(!runeBall.isGrasped()){
 					highlight.SetActive(false);
-					go.transform.position = transform.position; //TWEAK THIS
+					go.transform.position = ballPosition.position; //TWEAK THIS
+					go.transform.rotation = ballPosition.rotation;
+					runeBall.stopMovement();
 					setRuneBall(runeBall);
 				}
 			}
@@ -60,8 +65,4 @@ public abstract class Holder : MonoBehaviour {
 	}
 
 	protected abstract void setRuneBall(RuneBall ball);
-
-	
-
-	//TODO When ball is in collider -> turn on highlighter while ball still grabbed. When let go release into defined spot.
 }

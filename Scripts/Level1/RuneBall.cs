@@ -8,20 +8,27 @@ public class RuneBall : MonoBehaviour {
 	private int number; // 1, 2, 3, 4
 	private int colour; // 1 = Green, 2 = Orange, 3 = Purple, 4 = Blue
 	private bool grasped ;
-	public Material[] materials; // 0-3 Green, 4-7 Orange, 8-11 Purple, 12-15 Blue
-	private Material material;
+	public Material[] materials; // 0 - Grey, 1-4 Green, 5-8 Orange, 9-12 Purple, 13-16 Blue
+	private Renderer renderer;
 	private InteractionBehaviour interactionScript;
 	private bool locked = false;
+	private Vector3 spawnPosition;
+	private Quaternion spawnRotation;
+	private Rigidbody rb;
 
 	private void Awake() {
-		this.number = 0;
+		this.number = 1;
 		this.colour = 0;
 		this.grasped = false;
 	}
 
 	private void Start(){
-		material = GetComponent<Renderer>().material;
+		renderer = GetComponent<Renderer>();
 		interactionScript = GetComponent<InteractionBehaviour>();
+		rb = GetComponent<Rigidbody>();
+		this.spawnPosition = transform.position;
+		this.spawnRotation = transform.rotation;
+		spawnPosition.y += 0.1f;
 	}
 
 	private void Update() {
@@ -43,12 +50,14 @@ public class RuneBall : MonoBehaviour {
 	}
 
 	public void changeNumber(){
-		if(this.number == 4){
-			this.number = 1;
-		} else{
-			this.number++;
+		if(this.colour != 0){
+			if(this.number == 4){
+				this.number = 1;
+			} else{
+				this.number++;
+			}
+			changeTexture();
 		}
-		changeTexture();
 	}
 
 	public int getNumber(){
@@ -64,7 +73,23 @@ public class RuneBall : MonoBehaviour {
 	}
 
 	private void changeTexture(){
-		int index = ((colour-1) * 4) + number - 1;
-		material = materials[index];
+		int index = ((colour-1) * 4) + number;
+		
+		this.renderer.material = materials[index];
+		Debug.Log("Texture changed!");
+	}
+
+	public void respawn(){
+		transform.position = spawnPosition;
+		transform.rotation = spawnRotation;
+		rb.velocity = Vector3.zero;
+	}
+
+	public void stopMovement(){
+		rb.velocity = Vector3.zero;
+	}
+
+	public void freeze(){
+		rb.constraints = RigidbodyConstraints.FreezeAll;
 	}
 }
