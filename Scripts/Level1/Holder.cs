@@ -5,11 +5,14 @@ using UnityEngine;
 public abstract class Holder : MonoBehaviour {
 
 	public GameObject highlight;
+	public GameObject sceneManager;
 	public Transform ballPosition;
 	protected bool containsBall = false;
 	protected RuneBall ball;
 	protected int colliding = 0;
 	protected bool locked = false;
+	protected Level1Controller controller;
+	protected UpDownNavigation navigation;
 	
 
 	void Awake () {
@@ -17,6 +20,8 @@ public abstract class Holder : MonoBehaviour {
 	}
 
 	void Start() {
+		controller = sceneManager.GetComponent<Level1Controller>();
+		navigation = sceneManager.GetComponent<UpDownNavigation>();
 	}
 	
 	void FixedUpdate () {
