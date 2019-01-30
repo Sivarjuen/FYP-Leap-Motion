@@ -20,7 +20,7 @@ public abstract class Holder : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-		if(locked){
+		if(locked && ball != null){
 			ball.freeze();
 		}
 	}
@@ -57,8 +57,10 @@ public abstract class Holder : MonoBehaviour {
 					highlight.SetActive(false);
 					go.transform.position = ballPosition.position; //TWEAK THIS
 					go.transform.rotation = ballPosition.rotation;
-					runeBall.stopMovement();
+					runeBall.stopContact();
 					setRuneBall(runeBall);
+				} else {
+					highlight.SetActive(true);
 				}
 			}
 		}

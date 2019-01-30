@@ -89,7 +89,14 @@ public class RuneBall : MonoBehaviour {
 		rb.velocity = Vector3.zero;
 	}
 
+	public void stopContact(){
+		stopMovement();
+		interactionScript.ignoreContact = true;
+	}
+
 	public void freeze(){
-		rb.constraints = RigidbodyConstraints.FreezeAll;
+		//rb.constraints = RigidbodyConstraints.FreezeAll;
+		stopContact();
+		interactionScript.ignoreGrasping = true;
 	}
 }
