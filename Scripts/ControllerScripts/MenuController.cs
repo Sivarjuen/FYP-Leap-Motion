@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuController : AbstractController {
 
@@ -37,7 +38,10 @@ public class MenuController : AbstractController {
 				float elapsed = Time.time - timer;
 				dict[activeSlider].value = elapsed / hoverDuration;
 			} else {
-				//TODO do something
+				if(activeSlider.Equals("leftSlider")){
+					SceneManager.LoadScene(2);
+					//StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.Out, 1));
+				}
 			}
 		} else {
 			foreach(Slider slider in dict.Values){

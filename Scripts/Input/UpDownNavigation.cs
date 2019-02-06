@@ -9,7 +9,7 @@ public class UpDownNavigation : MonoBehaviour {
 	private float duration = 0.2f;
 	private float lockDuration = 5.0f;
 	private int timerState = 0;	// 0 - not active, 1 - upwards movement pending, 2 - downwards movement pending
-	private int cameraState = 0; // 0 - not moving, 1 - moving upwards, 2 - moving downwards, 3 - locked
+	private int cameraState = 0; // 0 - not moving, 1 - moving upwards, 2 - moving downwards, 3 - locked, 4 - permanent lock
 	private Quaternion targetRotation;
 	private bool leftPalmDown = false;
 	private bool rightPalmDown = false;
@@ -66,6 +66,8 @@ public class UpDownNavigation : MonoBehaviour {
 				lockPending = false;
 				cameraState = 0;
 			}
+		} else if(cameraState == 4){
+			//do nothing
 		}
 	}
 
@@ -86,7 +88,7 @@ public class UpDownNavigation : MonoBehaviour {
 	}
 
 	public void moveCameraUp(){
-		if(!facingUp){
+		if(!facingUp && cameraState != 4){
 			facingUp = true;
 			timerState = 0;
 			cameraState = 1;
@@ -95,7 +97,7 @@ public class UpDownNavigation : MonoBehaviour {
 	}
 
 	public void moveCameraDown(){
-		if(facingUp){
+		if(facingUp && cameraState != 4){
 			facingUp = false;
 			timerState = 0;
 			cameraState = 2;
@@ -108,9 +110,15 @@ public class UpDownNavigation : MonoBehaviour {
 	}
 
 	private void lockCamera(){
-		cameraState = 3;
-		timer = Time.time;
-		Debug.Log("Camera Locked");
+		if(cameraState != 4){
+			cameraState = 3;
+			timer = Time.time;
+			Debug.Log("Camera Locked");
+		}
+	}
+
+	public void lockPermanently(){
+		cameraState = 4;
 	}
 
 	public void moveCameraUpandLock(){
