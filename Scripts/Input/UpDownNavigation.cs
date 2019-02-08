@@ -8,7 +8,7 @@ public class UpDownNavigation : MonoBehaviour {
 	private float timer = 0.0f;
 	private float duration = 0.2f;
 	private float lockDuration = 5.0f;
-	private int timerState = 0;	// 0 - not active, 1 - upwards movement pending, 2 - downwards movement pending
+	private int timerState = 0;	// 0 - not active, 1 - timing upwards movement, 2 - timing downwards movement
 	private int cameraState = 0; // 0 - not moving, 1 - moving upwards, 2 - moving downwards, 3 - locked, 4 - permanent lock
 	private Quaternion targetRotation;
 	private bool leftPalmDown = false;
