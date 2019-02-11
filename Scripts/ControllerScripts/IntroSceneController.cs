@@ -26,7 +26,7 @@ public class IntroSceneController : AbstractController {
 				float elapsed = Time.time - timer;
 				dict[activeSlider].value = elapsed / hoverDuration;
 			} else {
-				SceneManager.LoadScene(1);
+				// SceneManager.LoadScene(1);
 				// StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.Out, 1));
 			}
 		} else {

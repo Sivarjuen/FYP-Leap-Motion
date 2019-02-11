@@ -2138,7 +2138,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 40d4e66963245a64a8162fc1575fd4a5, type: 2}
+      objectReference: {fileID: 2100000, guid: 5fd0c3fc45d236d40bbf7db4198f0b4b, type: 2}
     - target: {fileID: 23172017325962372, guid: df84af96020c94b4695aec5c3427db16,
         type: 2}
       propertyPath: m_DynamicOccludee
@@ -6441,7 +6441,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 40d4e66963245a64a8162fc1575fd4a5, type: 2}
+      objectReference: {fileID: 2100000, guid: 5fd0c3fc45d236d40bbf7db4198f0b4b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df84af96020c94b4695aec5c3427db16, type: 2}
   m_IsPrefabAsset: 0
