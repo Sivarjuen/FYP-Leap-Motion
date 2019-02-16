@@ -67,7 +67,7 @@ public class PowerButton : MonoBehaviour {
 		}
 	}
 
-	private bool isOn(){
+	public bool isOn(){
 		return on;
 	}
 

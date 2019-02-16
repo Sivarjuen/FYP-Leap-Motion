@@ -5,9 +5,11 @@ using UnityEngine;
 public class PowerPuzzle : MonoBehaviour {
 
 	public PowerButton[] buttons;
+	private bool completed;
 
 	void Start () {
-		if(buttons.Length == 9){
+		completed = false;
+		if(buttons.Length == 0){
 			PowerButton[] adj1 = new PowerButton[2];
 			PowerButton[] adj2 = new PowerButton[3];
 			PowerButton[] adj3 = new PowerButton[2];
@@ -55,7 +57,13 @@ public class PowerPuzzle : MonoBehaviour {
 		}
 	}
 	
-	void Update () {
-		
+	void FixedUpdate () {
+		bool flag = true;
+		for(int i = 0; i < buttons.Length; i++)
+			if(!buttons[i].isOn()){
+				flag = false;
+			}
+		}
+		completed = flag;
 	}
 }
