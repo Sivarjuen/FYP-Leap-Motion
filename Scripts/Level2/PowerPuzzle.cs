@@ -9,7 +9,7 @@ public class PowerPuzzle : MonoBehaviour {
 
 	void Start () {
 		completed = false;
-		if(buttons.Length == 0){
+		if(buttons.Length != 0){
 			PowerButton[] adj1 = new PowerButton[2];
 			PowerButton[] adj2 = new PowerButton[3];
 			PowerButton[] adj3 = new PowerButton[2];
@@ -58,12 +58,17 @@ public class PowerPuzzle : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-		bool flag = true;
-		for(int i = 0; i < buttons.Length; i++)
-			if(!buttons[i].isOn()){
-				flag = false;
+		if(!completed){
+			bool flag = true;
+			for(int i = 0; i < buttons.Length; i++){
+				if(!buttons[i].isOn()){
+					flag = false;
+				}
 			}
+			completed = flag;
+		} else {
+			Debug.Log("Completed");
 		}
-		completed = flag;
+		
 	}
 }

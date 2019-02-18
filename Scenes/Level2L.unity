@@ -7828,7 +7828,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1024158333}
-  - component: {fileID: 1024158332}
   - component: {fileID: 1024158331}
   m_Layer: 0
   m_Name: Puzzle3
@@ -7836,7 +7835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1024158331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7858,18 +7857,6 @@ MonoBehaviour:
   - {fileID: 2101126266}
   - {fileID: 968083314}
   - {fileID: 657006351}
---- !u!114 &1024158332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1024158330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa8008a3bee8364e9d22df437e6c1b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttons: []
 --- !u!4 &1024158333
 Transform:
   m_ObjectHideFlags: 0
@@ -10309,7 +10296,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1371119197}
-  - component: {fileID: 1371119196}
   - component: {fileID: 1371119195}
   m_Layer: 0
   m_Name: Puzzle2
@@ -10317,7 +10303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1371119195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10339,18 +10325,6 @@ MonoBehaviour:
   - {fileID: 1905333285}
   - {fileID: 770056125}
   - {fileID: 1808003684}
---- !u!114 &1371119196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1371119194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa8008a3bee8364e9d22df437e6c1b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttons: []
 --- !u!4 &1371119197
 Transform:
   m_ObjectHideFlags: 0
@@ -14504,7 +14478,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1942442125}
-  - component: {fileID: 1942442126}
   - component: {fileID: 1942442127}
   m_Layer: 0
   m_Name: Puzzle1
@@ -14528,18 +14501,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1942442126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1942442124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa8008a3bee8364e9d22df437e6c1b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttons: []
 --- !u!114 &1942442127
 MonoBehaviour:
   m_ObjectHideFlags: 0
