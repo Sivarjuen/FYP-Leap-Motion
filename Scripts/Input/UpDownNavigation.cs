@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Leap;
+using Leap.Unity;
 
 public class UpDownNavigation : MonoBehaviour {
 
+	public LeapProvider LeapDataProvider;
 	public GameObject leapRig;
 	private float timer = 0.0f;
 	private float duration = 0.2f;
@@ -17,13 +20,15 @@ public class UpDownNavigation : MonoBehaviour {
 	private bool rightPalmUp = false;
 	private bool facingUp = true;
 	private bool lockPending = false;
+	private Frame curFrame;
 	
 	void Start(){
 		targetRotation = leapRig.transform.rotation;
 	}
 	
 	void Update () {
-		if(cameraState == 0){
+		curFrame = LeapDataProvider.CurrentFrame;
+		if(cameraState == 0 && curFrame.Hands.Count == 2){
 			if(leftPalmUp && rightPalmUp){
 				if(timerState == 0 || timerState == 1){
 					if(!facingUp){

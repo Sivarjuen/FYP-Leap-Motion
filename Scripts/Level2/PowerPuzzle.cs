@@ -9,7 +9,7 @@ public class PowerPuzzle : MonoBehaviour {
 
 	void Start () {
 		completed = false;
-		if(buttons.Length != 0){
+		if(buttons.Length == 9){
 			PowerButton[] adj1 = new PowerButton[2];
 			PowerButton[] adj2 = new PowerButton[3];
 			PowerButton[] adj3 = new PowerButton[2];

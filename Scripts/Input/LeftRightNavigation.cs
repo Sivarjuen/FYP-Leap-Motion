@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Leap;
+using Leap.Unity;
 
 public class LeftRightNavigation : MonoBehaviour {
 
+	public LeapProvider LeapDataProvider;
 	public GameObject leapRig;
 	public GameObject point1, point2, point3, point4;
 	private float timer = 0.0f;
@@ -18,6 +21,7 @@ public class LeftRightNavigation : MonoBehaviour {
 	private bool leftPalmRight = false;
 	private bool rightPalmRight = false;
 	private bool reset = false;
+	private Frame curFrame;
 
 	
 	// Use this for initialization
@@ -32,10 +36,11 @@ public class LeftRightNavigation : MonoBehaviour {
 		//Debug.Log("Facing: " + facing);
 		//Debug.Log("Camera State: " + cameraState);
 		//Debug.Log("Timer State :" + timerState);
+		curFrame = LeapDataProvider.CurrentFrame;
 		if(!leftPalmLeft && !rightPalmLeft && !leftPalmRight && !rightPalmRight){
 			reset = false;
 		}
-		if(cameraState == 0){
+		if(cameraState == 0 && curFrame.Hands.Count == 2){
 			if(!reset){
 				if(leftPalmRight && rightPalmRight){
 					if(timerState == 0 || timerState == 1){
