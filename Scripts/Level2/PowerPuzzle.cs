@@ -57,7 +57,7 @@ public class PowerPuzzle : MonoBehaviour {
 		}
 	}
 	
-	void FixedUpdate () {
+	void Update () {
 		if(!completed){
 			bool flag = true;
 			for(int i = 0; i < buttons.Length; i++){
@@ -66,9 +66,14 @@ public class PowerPuzzle : MonoBehaviour {
 				}
 			}
 			completed = flag;
-		} else {
-			Debug.Log("Completed");
+		}
+		if(Input.GetKeyDown(KeyCode.M)){
+			completed = true;
 		}
 		
+	}
+
+	public bool isCompleted(){
+		return completed;
 	}
 }

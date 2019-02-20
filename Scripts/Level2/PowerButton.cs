@@ -13,14 +13,12 @@ public class PowerButton : MonoBehaviour {
 	private Color onColor = Color.green;
 	private Color offColor;
 	private Color targetColor;
-	private InteractionBehaviour _intObj;
 	private float toggleDelay = .2f;
 	private float toggleTimer = 0;
 	private PowerButton[] adjacentButtons;
 
 	void Start () {
 		on = startOn;
-		 _intObj = GetComponent<InteractionBehaviour>();
 
 		Renderer renderer = GetComponent<Renderer>();
 		if (renderer == null) {

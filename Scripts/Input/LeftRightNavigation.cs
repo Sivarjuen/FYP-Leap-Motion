@@ -22,12 +22,39 @@ public class LeftRightNavigation : MonoBehaviour {
 	private bool rightPalmRight = false;
 	private bool reset = false;
 	private Frame curFrame;
+	public int start;
 
 	
 	// Use this for initialization
 	void Start () {
-		targetPosition = point1.transform.position;
-		targetRotation = point1.transform.rotation;
+		switch(start){
+			case 1:
+				targetPosition = point1.transform.position;
+				targetRotation = point1.transform.rotation;
+				facing = 0;
+				return;
+			case 2:
+				targetPosition = point2.transform.position;
+				targetRotation = point2.transform.rotation;
+				facing = 1;
+				return;
+			case 3:
+				targetPosition = point3.transform.position;
+				targetRotation = point3.transform.rotation;
+				facing = 2;
+				return;
+			case 4:
+				targetPosition = point4.transform.position;
+				targetRotation = point4.transform.rotation;
+				facing = 3;
+				return;
+			default:
+				targetPosition = point1.transform.position;
+				targetRotation = point1.transform.rotation;
+				facing = 0;
+				return;
+		}
+		
 	}
 	
 	// Update is called once per frame

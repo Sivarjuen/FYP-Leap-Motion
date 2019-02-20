@@ -11,7 +11,6 @@ public class RuneBall : MonoBehaviour {
 	public Material[] materials; // 0 - Grey, 1-4 Green, 5-8 Orange, 9-12 Purple, 13-16 Blue
 	private Renderer renderer;
 	private InteractionBehaviour interactionScript;
-	private bool locked = false;
 	private Vector3 spawnPosition;
 	private Quaternion spawnRotation;
 	private Rigidbody rb;
@@ -74,9 +73,7 @@ public class RuneBall : MonoBehaviour {
 
 	private void changeTexture(){
 		int index = ((colour-1) * 4) + number;
-		
 		this.renderer.material = materials[index];
-		Debug.Log("Texture changed!");
 	}
 
 	public void respawn(){
@@ -95,7 +92,6 @@ public class RuneBall : MonoBehaviour {
 	}
 
 	public void freeze(){
-		//rb.constraints = RigidbodyConstraints.FreezeAll;
 		stopContact();
 		interactionScript.ignoreGrasping = true;
 	}

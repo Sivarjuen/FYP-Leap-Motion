@@ -12,6 +12,8 @@ public class CraneController : MonoBehaviour {
 	private InteractionBehaviour interactionScript;
 	public Transform topHard, topSoft, botHard, botSoft, leftHard, leftSoft, rightHard, rightSoft;
 	public ArmController arm;
+	private Color onColor = Color.green;
+	public Renderer lightRenderer;
 
 	// Use this for initialization
 	void Start () {
@@ -78,5 +80,9 @@ public class CraneController : MonoBehaviour {
 		} else {
 			arm.stop();
 		}
+	}
+
+	public void activate(){
+		lightRenderer.material.color = onColor;
 	}
 }

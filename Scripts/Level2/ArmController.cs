@@ -11,12 +11,12 @@ public class ArmController : MonoBehaviour {
 	private Vector3 nearestPosition;
 	private float speed = 0.03f;
 	private int movement = 0; // 0 = stationary, 1 = move up, 2 = move down, 3 = move left, 4 = move right
-	private float highlightTimer = 0;
-	private float highlightDelay = 0.1f;
+	private bool active;
 
 	
 	// Use this for initialization
 	void Start () {
+		active = false;
 		minZ = furthestPlatform.position.z;
 		maxZ = closestPlatform.position.z;
 		minX = rightMostPlatform.position.x;
@@ -26,32 +26,32 @@ public class ArmController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		highlightTimer = Time.time;
-		Vector3 current = transform.position;
-		findNearestPlatform();
-		if(movement == 0){
-			transform.position = Vector3.Lerp(current, nearestPosition, 5 * Time.deltaTime);
-		} else {
-			if(movement == 1){
-				if(current.z > minZ){
-					current.z = current.z - speed;
+		if(active){
+			Vector3 current = transform.position;
+			findNearestPlatform();
+			if(movement == 0){
+				transform.position = Vector3.Lerp(current, nearestPosition, 5 * Time.deltaTime);
+			} else {
+				if(movement == 1){
+					if(current.z > minZ){
+						current.z = current.z - speed;
+					}
+				} else if(movement == 2){
+					if(current.z < maxZ){
+						current.z = current.z + speed;
+					}
+				} else if(movement == 3){
+					if(current.x < maxX){
+						current.x = current.x + speed;
+					}
+				} else if(movement == 4){
+					if(current.x > minX){
+						current.x = current.x - speed;
+					}
 				}
-			} else if(movement == 2){
-				if(current.z < maxZ){
-					current.z = current.z + speed;
-				}
-			} else if(movement == 3){
-				if(current.x < maxX){
-					current.x = current.x + speed;
-				}
-			} else if(movement == 4){
-				if(current.x > minX){
-					current.x = current.x - speed;
-				}
+				transform.position = current;
 			}
-			transform.position = current;
 		}
-
 	}
 
 	private void updateHighlightedPlatform(){
@@ -109,5 +109,9 @@ public class ArmController : MonoBehaviour {
 
 	public void stop(){
 		movement = 0;
+	}
+
+	public void activate(){
+		active = true;
 	}
 }
