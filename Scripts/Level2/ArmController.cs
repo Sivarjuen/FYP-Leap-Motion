@@ -12,10 +12,13 @@ public class ArmController : MonoBehaviour {
 	private float speed = 0.03f;
 	private int movement = 0; // 0 = stationary, 1 = move up, 2 = move down, 3 = move left, 4 = move right
 	private bool active;
+	private Block block;
+	private bool containsBlock;
 
 	
 	// Use this for initialization
 	void Start () {
+		containsBlock = false;
 		active = false;
 		minZ = furthestPlatform.position.z;
 		maxZ = closestPlatform.position.z;
@@ -113,5 +116,19 @@ public class ArmController : MonoBehaviour {
 
 	public void activate(){
 		active = true;
+	}
+
+	public bool hasBlock(){
+		return containsBlock;
+	}
+
+	public void setBlock(Block block){
+		this.block = block;
+		containsBlock = true;
+	}
+
+	public void removeBlock(){
+		containsBlock = false;
+		block = null;
 	}
 }

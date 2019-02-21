@@ -5,9 +5,13 @@ using UnityEngine;
 public class PlatformController : MonoBehaviour {
 
 	public GameObject highlight; 
+	private Block block;
+	private bool containsBlock;
+	public Transform blockPosition;
 	
 	void Awake() {
 		highlight.SetActive(false);
+		containsBlock = false;
 	}
 	
 	// Use this for initialization
@@ -22,5 +26,19 @@ public class PlatformController : MonoBehaviour {
 
 	public void setHighlight(bool b){
 		highlight.SetActive(b);
+	}
+
+	public bool hasBlock(){
+		return containsBlock;
+	}
+
+	public void setBlock(Block block){
+		this.block = block;
+		containsBlock = true;
+	}
+
+	public void removeBlock(){
+		containsBlock = false;
+		block = null;
 	}
 }
