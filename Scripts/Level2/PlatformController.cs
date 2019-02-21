@@ -35,10 +35,24 @@ public class PlatformController : MonoBehaviour {
 	public void setBlock(Block block){
 		this.block = block;
 		containsBlock = true;
+		block.transform.position = blockPosition.position;
 	}
 
 	public void removeBlock(){
 		containsBlock = false;
 		block = null;
+	}
+
+	public Block getBlock(){
+		return block;
+	}
+
+	public int blockType(){
+		if(containsBlock){
+			return block.getType();
+		} else {
+			return -1;
+		}
+		
 	}
 }

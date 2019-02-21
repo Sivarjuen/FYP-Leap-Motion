@@ -14,12 +14,14 @@ public class ArmController : MonoBehaviour {
 	private bool active;
 	private Block block;
 	private bool containsBlock;
+	private bool pickingDropping;
 
 	
 	// Use this for initialization
 	void Start () {
 		containsBlock = false;
 		active = false;
+		pickingDropping = false;
 		minZ = furthestPlatform.position.z;
 		maxZ = closestPlatform.position.z;
 		minX = rightMostPlatform.position.x;
@@ -54,6 +56,19 @@ public class ArmController : MonoBehaviour {
 				}
 				transform.position = current;
 			}
+			if(containsBlock && block != null){
+				updateBlockPosition();
+			}
+		}
+	}
+
+	private void updateBlockPosition(){
+		if(!pickingDropping){
+			Vector3 armPosition = transform.position;
+			Vector3 blockPosition = block.transform.position;
+			blockPosition.x = armPosition.x;
+			blockPosition.z = armPosition.z;
+			block.transform.position = blockPosition;
 		}
 	}
 
@@ -130,5 +145,13 @@ public class ArmController : MonoBehaviour {
 	public void removeBlock(){
 		containsBlock = false;
 		block = null;
+	}
+
+	public Block getBlock(){
+		return block;
+	}
+
+	public GameObject nearestPlatformGO(){
+		return nearestPlatform;
 	}
 }
