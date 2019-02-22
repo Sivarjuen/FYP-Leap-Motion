@@ -16,6 +16,7 @@ public class PowerButton : MonoBehaviour {
 	private float toggleDelay = .2f;
 	private float toggleTimer = 0;
 	private PowerButton[] adjacentButtons;
+	private PowerButton correspondingButton;
 
 	void Start () {
 		on = startOn;
@@ -58,6 +59,10 @@ public class PowerButton : MonoBehaviour {
 		toggle();
 	}
 
+	public void hardModeToggle(){
+		correspondingButton.manualToggle();
+	}
+
 	public void manualToggle(){
 		toggle();
 		foreach(PowerButton b in adjacentButtons){
@@ -71,5 +76,9 @@ public class PowerButton : MonoBehaviour {
 
 	public void setAdjacentButtons(PowerButton[] buttons){
 		this.adjacentButtons = buttons;
+	}
+
+	public void setCorrespondingButton(PowerButton button){
+		correspondingButton = button;
 	}
 }
