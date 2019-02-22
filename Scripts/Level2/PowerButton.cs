@@ -79,6 +79,6 @@ public class PowerButton : MonoBehaviour {
 	}
 
 	public void setCorrespondingButton(PowerButton button){
-		correspondingButton = button;
+		this.correspondingButton = button;
 	}
 }

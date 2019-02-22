@@ -20,7 +20,10 @@ public class PickupController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		 maxHeight = arm.transform.position.y;
-		 minHeight = 1.25f;
+		 minHeight = 1.25f; //default value
+		 if(arm.numberOfPlatforms() == 9) minHeight = 1.25f; 
+		 if(arm.numberOfPlatforms() == 16) minHeight = 1.05f;
+		 if(arm.numberOfPlatforms() == 25) minHeight = 0.25f; 
 	}
 	
 	// Update is called once per frame

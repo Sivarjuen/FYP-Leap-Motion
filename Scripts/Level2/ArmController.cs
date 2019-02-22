@@ -154,4 +154,8 @@ public class ArmController : MonoBehaviour {
 	public GameObject nearestPlatformGO(){
 		return nearestPlatform;
 	}
+
+	public int numberOfPlatforms(){
+		return platforms.Length;
+	}
 }

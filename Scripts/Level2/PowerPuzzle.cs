@@ -5,7 +5,6 @@ using UnityEngine;
 public class PowerPuzzle : MonoBehaviour {
 
 	public PowerButton[] buttons;
-	public bool hardMode = false;
 	private bool completed;
 
 	void Start () {
@@ -241,7 +240,7 @@ public class PowerPuzzle : MonoBehaviour {
 			adj13[1] = buttons[13];
 			adj13[2] = buttons[15];
 			
-			adj14[0] = buttons[9];
+			adj14[0] = buttons[10];
 			adj14[1] = buttons[12];
 			adj14[2] = buttons[14];
 			adj14[3] = buttons[16];
