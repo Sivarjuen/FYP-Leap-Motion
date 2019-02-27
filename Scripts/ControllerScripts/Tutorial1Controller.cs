@@ -13,6 +13,7 @@ public class Tutorial1Controller : MonoBehaviour {
 	public TextMeshProUGUI topText, bottomText;
 	public GameObject topLight, bottomLight;
 	public GameObject handModels, leapMotion;
+	public GameObject upIndicator, downIndicator;
 	private bool facingUp;
 	private int state;	// 0 - start (up), 1 - down first time, 2 - up first time, 3 - down second time, 4 - up second time, 5 - finished
 	private UpDownNavigation navigation;
@@ -23,6 +24,8 @@ public class Tutorial1Controller : MonoBehaviour {
 		handModels.SetActive(false);
 		leapMotion.SetActive(false);
 		videoPlane.SetActive(false);
+		downIndicator.SetActive(false);
+		upIndicator.SetActive(false);
 		player.playOnAwake = false;
 		player.isLooping = true;
 		topText.text = "";
@@ -66,47 +69,82 @@ public class Tutorial1Controller : MonoBehaviour {
 		yield return new WaitForSeconds(6);
 		topText.text = "";
 		yield return new WaitForSeconds(0.2f);
+		topText.text = "You will see directional indicators on the edges of your screen to indicate which directions you can look in";
+		yield return new WaitForSeconds(5);
+		upIndicator.SetActive(true);
+		downIndicator.SetActive(true);
+		yield return new WaitForSeconds(0.4f);
+		upIndicator.SetActive(false);
+		downIndicator.SetActive(false);
+		yield return new WaitForSeconds(0.4f);
+		upIndicator.SetActive(true);
+		downIndicator.SetActive(true);
+		yield return new WaitForSeconds(0.4f);
+		upIndicator.SetActive(false);
+		downIndicator.SetActive(false);
+		yield return new WaitForSeconds(0.4f);
+		upIndicator.SetActive(true);
+		downIndicator.SetActive(true);
+		yield return new WaitForSeconds(0.4f);
+		upIndicator.SetActive(false);
+		downIndicator.SetActive(false);
+		yield return new WaitForSeconds(0.5f);
+		topText.text = "";
+		yield return new WaitForSeconds(0.2f);
 		topText.text = "It's now your turn";
 		yield return new WaitForSeconds(3);
 		topText.text = "";
 		yield return new WaitForSeconds(0.2f);
 		topText.text = "Start by looking down";
+		downIndicator.SetActive(true);
 		leapMotion.SetActive(true);
 		handModels.SetActive(true);
+		navigation.activate();
 		yield return null;
 	}
 	
 	void Update () {
-		if(facingUp != navigation.isFacingUp()){ // If change in looking direction
-			if(navigation.isFacingUp()){ //Looking up
-				facingUp = true;
-				switch(state){
-					case 1:
-						state = 2;
-						break;
-					case 3:
-						state = 4;
-						break;
-					case 5:
-						break;
-				}
-			} else { // Looking down
-				facingUp = false;
-				switch(state){
-					case 0:
-						state = 1;
-						break;
-					case 2:
-						state = 3;
-						break;
-					case 4:
-						state = 5;
-						break;
-					case 5:
-						break;
-				}
+		if(navigation.active){
+			if(navigation.isFacingUp()){
+				downIndicator.SetActive(true);
+				upIndicator.SetActive(false);
+			} else {
+				downIndicator.SetActive(false);
+				upIndicator.SetActive(true);
 			}
-			StartCoroutine(triggerProgress());
+			
+			if(facingUp != navigation.isFacingUp()){ // If change in looking direction
+				if(navigation.isFacingUp()){ //Looking up
+					facingUp = true;
+					switch(state){
+						case 1:
+							state = 2;
+							break;
+						case 3:
+							state = 4;
+							break;
+						case 5:
+							
+							break;
+					}
+				} else { // Looking down
+					facingUp = false;
+					switch(state){
+						case 0:
+							state = 1;
+							break;
+						case 2:
+							state = 3;
+							break;
+						case 4:
+							state = 5;
+							break;
+						case 5:
+							break;
+					}
+				}
+				StartCoroutine(triggerProgress());
+			}
 		}
 	}
 
@@ -117,27 +155,37 @@ public class Tutorial1Controller : MonoBehaviour {
 						//Do nothing
 						break;
 					case 1:
+						//downIndicator.SetActive(false);
 						toggleLight(1, 1);
 						topText.text = "";
 						bottomText.text = "Great job! Now look up!";
+						//upIndicator.SetActive(true);
 						break;
 					case 2:
+						//upIndicator.SetActive(false);
 						toggleLight(0, 1);
 						topText.text = "You're getting the hang of this. Look down again!";
+						//downIndicator.SetActive(true);
 						break;
 					case 3:
+						//downIndicator.SetActive(false);
 						toggleLight(1, 2);
 						bottomText.text = "This is the last one I promise. Look up!";
+						//upIndicator.SetActive(true);
 						break;
 					case 4:
+						//downIndicator.SetActive(true);
+						//upIndicator.SetActive(false);
 						toggleLight(0, 2);
 						topText.text = "You're ready to tackle the first level";
-						bottomText.text = "";
+						bottomText.text = "You're ready to tackle the first level";
 						yield return new WaitForSeconds(4f);
 						topText.text = "";
+						bottomText.text = "";
 						yield return new WaitForSeconds(.2f);
 						topText.text = "While we are preparing the room, feel free to practice looking up and down a few more times";
-						yield return new WaitForSeconds(17f);
+						bottomText.text = "While we are preparing the room, feel free to practice looking up and down a few more times";
+						yield return new WaitForSeconds(12f);
 						topText.text = "3";
 						bottomText.text = "3";
 						yield return new WaitForSeconds(1f);

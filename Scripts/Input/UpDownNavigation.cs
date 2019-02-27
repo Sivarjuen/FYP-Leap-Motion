@@ -21,58 +21,61 @@ public class UpDownNavigation : MonoBehaviour {
 	private bool facingUp = true;
 	private bool lockPending = false;
 	private Frame curFrame;
+	public bool active = true;
 	
 	void Start(){
 		targetRotation = leapRig.transform.rotation;
 	}
 	
 	void Update () {
-		curFrame = LeapDataProvider.CurrentFrame;
-		if(cameraState == 0 && curFrame.Hands.Count == 2){
-			if(leftPalmUp && rightPalmUp){
-				if(timerState == 0 || timerState == 1){
-					if(!facingUp){
-						timer = Time.time;
-						timerState = 1;
+		if(active){
+			curFrame = LeapDataProvider.CurrentFrame;
+			if(cameraState == 0 && curFrame.Hands.Count == 2){
+				if(leftPalmUp && rightPalmUp){
+					if(timerState == 0 || timerState == 1){
+						if(!facingUp){
+							timer = Time.time;
+							timerState = 1;
+						}
+					} else if(timerState == 2) {
+							moveCameraDown();
+					} 
+				} else if(leftPalmDown && rightPalmDown){
+					if(timerState == 0 || timerState == 2){
+						if(facingUp){
+							timer = Time.time;
+							timerState = 2;
+						}
+					} else if(timerState == 1) {
+							moveCameraUp();
 					}
-				} else if(timerState == 2) {
-						moveCameraDown();
-				} 
-			} else if(leftPalmDown && rightPalmDown){
-				if(timerState == 0 || timerState == 2){
-					if(facingUp){
-						timer = Time.time;
-						timerState = 2;
-					}
-				} else if(timerState == 1) {
-						moveCameraUp();
-				}
-			} else {
-				if(Time.time - timer >= duration){
-					if(timerState == 1){
-						moveCameraUp();
-					} else if (timerState == 2){
-						moveCameraDown();
-					}
-				}
-			}
-		} else if(cameraState == 1 || cameraState == 2){
-			leapRig.transform.rotation = Quaternion.Lerp (leapRig.transform.rotation, targetRotation , 10 * 1f * Time.deltaTime); 
-			if(leapRig.transform.rotation == targetRotation){
-				if(lockPending){
-					lockCamera();
 				} else {
+					if(Time.time - timer >= duration){
+						if(timerState == 1){
+							moveCameraUp();
+						} else if (timerState == 2){
+							moveCameraDown();
+						}
+					}
+				}
+			} else if(cameraState == 1 || cameraState == 2){
+				leapRig.transform.rotation = Quaternion.Lerp (leapRig.transform.rotation, targetRotation , 10 * 1f * Time.deltaTime); 
+				if(leapRig.transform.rotation == targetRotation){
+					if(lockPending){
+						lockCamera();
+					} else {
+						cameraState = 0;
+					}
+				}
+			} else if(cameraState == 3){
+				if(Time.time - timer >= lockDuration){
+					Debug.Log("Camera Unlocked");
+					lockPending = false;
 					cameraState = 0;
 				}
+			} else if(cameraState == 4){
+				//do nothing
 			}
-		} else if(cameraState == 3){
-			if(Time.time - timer >= lockDuration){
-				Debug.Log("Camera Unlocked");
-				lockPending = false;
-				cameraState = 0;
-			}
-		} else if(cameraState == 4){
-			//do nothing
 		}
 	}
 
@@ -129,5 +132,13 @@ public class UpDownNavigation : MonoBehaviour {
 	public void moveCameraUpandLock(){
 		moveCameraUp();
 		lockPending = true;
+	}
+
+	public void activate(){
+		active = true;
+	}
+
+	public void deactivate(){
+		active = false;
 	}
 }
