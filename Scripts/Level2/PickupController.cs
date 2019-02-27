@@ -16,6 +16,7 @@ public class PickupController : MonoBehaviour {
 	private int movementState = 0; // 0 - nothing, 1 - moving down, 2 - moving up
 	private int state = 0; // 0 - nothing, 1 - dropping, 2 - picking up
 	private float speed = 0.02f;
+	public Level1RController controller;
 
 	// Use this for initialization
 	void Start () {
@@ -28,66 +29,75 @@ public class PickupController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(!pickup && extended){
-			if(Time.time > timer + delay){
-				if(!leftExtended || !rightExtended) extended = false;
-			}
-		}
-		if(pickup){
-			PlatformController pc = arm.nearestPlatformGO().GetComponent<PlatformController>();
-			if(!inProgress){
-				bool blockArm = arm.hasBlock();
-				bool blockPlatform = pc.hasBlock();
-				if(blockArm && !blockPlatform){
-					state = 1; //dropping
-				} else if(!blockArm && blockPlatform){
-					state = 2; //picking up
+		if(controller.isActivated()){
+			if(!pickup && extended){
+				if(Time.time > timer + delay){
+					if(!leftExtended || !rightExtended) extended = false;
 				}
-				movementState = 1;
-				inProgress = true;
-			} else {
-				Vector3 current = arm.transform.position;
-				//move down to minHeight
-				if(movementState == 1){
-					if(current.y <= minHeight){
-						current.y = minHeight;
-						//follow state (nothing, dropping or picking?)
-						if(state == 1){
-							pc.setBlock(arm.getBlock());
-							arm.removeBlock();
-						} else if(state == 2){
-							arm.setBlock(pc.getBlock());
-							pc.removeBlock();
+			}
+			if(pickup){
+				PlatformController pc = arm.nearestPlatformGO().GetComponent<PlatformController>();
+				if(!inProgress){
+					bool blockArm = arm.hasBlock();
+					bool blockPlatform = pc.hasBlock();
+					if(blockArm && !blockPlatform){
+						state = 1; //dropping
+					} else if(!blockArm && blockPlatform){
+						state = 2; //picking up
+					}
+					movementState = 1;
+					inProgress = true;
+				} else {
+					Vector3 current = arm.transform.position;
+					//move down to minHeight
+					if(movementState == 1){
+						if(current.y <= minHeight){
+							current.y = minHeight;
+							//follow state (nothing, dropping or picking?)
+							if(state == 1){
+								pc.setBlock(arm.getBlock());
+								arm.removeBlock();
+							} else if(state == 2){
+								arm.setBlock(pc.getBlock());
+								pc.removeBlock();
+							}
+							movementState = 2;
+						} else {
+							current.y = current.y - speed;
+							if(arm.hasBlock()){
+								Vector3 blockPosition = arm.getBlock().transform.position;
+								blockPosition.y = blockPosition.y - speed;
+								arm.getBlock().transform.position = blockPosition;
+							}
 						}
-						movementState = 2;
-					} else {
-						current.y = current.y - speed;
-						if(arm.hasBlock()){
-							Vector3 blockPosition = arm.getBlock().transform.position;
-							blockPosition.y = blockPosition.y - speed;
-							arm.getBlock().transform.position = blockPosition;
+					} else if(movementState == 2){ //move up to maxHeight
+						if(current.y >= maxHeight){
+							current.y = maxHeight;
+							//reset everything here
+							movementState = 0;
+							state = 0;
+							inProgress = false;
+							pickup = false;
+						} else {
+							current.y = current.y + speed;
+							if(arm.hasBlock()){
+								Vector3 blockPosition = arm.getBlock().transform.position;
+								blockPosition.y = blockPosition.y + speed; 
+								arm.getBlock().transform.position = blockPosition;
+							}
 						}
 					}
-				} else if(movementState == 2){ //move up to maxHeight
-					if(current.y >= maxHeight){
-						current.y = maxHeight;
-						//reset everything here
-						movementState = 0;
-						state = 0;
-						inProgress = false;
-						pickup = false;
-					} else {
-						current.y = current.y + speed;
-						if(arm.hasBlock()){
-							Vector3 blockPosition = arm.getBlock().transform.position;
-							blockPosition.y = blockPosition.y + speed; 
-							arm.getBlock().transform.position = blockPosition;
-						}
-					}
+					arm.transform.position = current;	
 				}
-				arm.transform.position = current;	
+				
 			}
-			
+		} else {
+			leftExtended = false;
+			rightExtended = false;
+			leftClosed = false;
+			rightClosed = false;
+			extended = false;
+			pickup = false;
 		}
 	}
 

@@ -143,4 +143,8 @@ public class Level1RController : MonoBehaviour {
 		blockScript.initialise(type);
 		platforms[index].setBlock(blockScript);
 	}
+
+	public bool isActivated(){
+		return activated;
+	}
 }

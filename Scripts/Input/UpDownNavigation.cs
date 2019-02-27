@@ -14,20 +14,24 @@ public class UpDownNavigation : MonoBehaviour {
 	private int timerState = 0;	// 0 - not active, 1 - timing upwards movement, 2 - timing downwards movement
 	private int cameraState = 0; // 0 - not moving, 1 - moving upwards, 2 - moving downwards, 3 - locked, 4 - permanent lock
 	private Quaternion targetRotation;
+	private Vector3 targetPosition;
 	private bool leftPalmDown = false;
 	private bool rightPalmDown = false;
 	private bool leftPalmUp = false;
 	private bool rightPalmUp = false;
-	private bool facingUp = true;
+	public bool facingUp = true;
 	private bool lockPending = false;
 	private Frame curFrame;
 	public bool active = true;
+	public bool usePoints = false;
+	public GameObject pointUp, pointDown;
 	
 	void Start(){
 		targetRotation = leapRig.transform.rotation;
 	}
 	
 	void Update () {
+
 		if(active){
 			curFrame = LeapDataProvider.CurrentFrame;
 			if(cameraState == 0 && curFrame.Hands.Count == 2){
@@ -41,6 +45,7 @@ public class UpDownNavigation : MonoBehaviour {
 							moveCameraDown();
 					} 
 				} else if(leftPalmDown && rightPalmDown){
+					
 					if(timerState == 0 || timerState == 2){
 						if(facingUp){
 							timer = Time.time;
@@ -60,12 +65,22 @@ public class UpDownNavigation : MonoBehaviour {
 				}
 			} else if(cameraState == 1 || cameraState == 2){
 				leapRig.transform.rotation = Quaternion.Lerp (leapRig.transform.rotation, targetRotation , 10 * 1f * Time.deltaTime); 
+				if(usePoints){
+					leapRig.transform.position = Vector3.Lerp (leapRig.transform.position, targetPosition , 10 * 1f * Time.deltaTime); 
+				}
 				if(leapRig.transform.rotation == targetRotation){
-					if(lockPending){
-						lockCamera();
-					} else {
-						cameraState = 0;
+					if(!usePoints || (usePoints && leapRig.transform.position == targetPosition)){
+						if(lockPending){
+							lockCamera();
+						} else {
+							cameraState = 0;
+						}
 					}
+				}
+				if(Time.time > timer + 3.0f){	// Forces camera to target position if it gets stuck after 3 secs
+					cameraState = 0;
+					leapRig.transform.position = targetPosition;
+					leapRig.transform.rotation = targetRotation;
 				}
 			} else if(cameraState == 3){
 				if(Time.time - timer >= lockDuration){
@@ -99,8 +114,14 @@ public class UpDownNavigation : MonoBehaviour {
 		if(!facingUp && cameraState != 4){
 			facingUp = true;
 			timerState = 0;
+			timer = Time.time;
 			cameraState = 1;
-			targetRotation = Quaternion.Euler(0,0,0);
+			if(usePoints){
+				targetPosition = pointUp.transform.position;
+				targetRotation = pointUp.transform.rotation;
+			} else {
+				targetRotation = Quaternion.Euler(0,0,0);
+			}
 		}
 	}
 
@@ -108,8 +129,14 @@ public class UpDownNavigation : MonoBehaviour {
 		if(facingUp && cameraState != 4){
 			facingUp = false;
 			timerState = 0;
+			timer = Time.time;
 			cameraState = 2;
-			targetRotation = Quaternion.Euler(60,0,0);
+			if(usePoints){
+				targetPosition = pointDown.transform.position;
+				targetRotation = pointDown.transform.rotation;
+			} else {
+				targetRotation = Quaternion.Euler(60,0,0);
+			}
 		}
 	}
 
