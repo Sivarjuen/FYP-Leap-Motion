@@ -72,8 +72,15 @@ public class RuneBall : MonoBehaviour {
 	}
 
 	private void changeTexture(){
-		int index = ((colour-1) * 4) + number;
-		this.renderer.material = materials[index];
+		if(materials.Length == 5){
+			this.renderer.material = materials[colour];
+		}
+		else if(materials.Length == 17){
+			int index = ((colour-1) * 4) + number;
+			this.renderer.material = materials[index];
+		} else {
+			Debug.LogError("Incorrect number of materials");
+		}
 	}
 
 	public void respawn(){

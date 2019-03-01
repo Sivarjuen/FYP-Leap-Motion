@@ -23,10 +23,10 @@ public class PowerButton : MonoBehaviour {
 
 		Renderer renderer = GetComponent<Renderer>();
 		if (renderer == null) {
-		renderer = GetComponentInChildren<Renderer>();
+			renderer = GetComponentInChildren<Renderer>();
 		}
 		if (renderer != null) {
-		_material = renderer.material;
+			_material = renderer.material;
 		}
 		offColor = _material.color;
 		if(on){

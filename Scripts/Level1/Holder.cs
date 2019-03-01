@@ -11,7 +11,7 @@ public abstract class Holder : MonoBehaviour {
 	protected RuneBall ball;
 	protected int colliding = 0;
 	protected bool locked = false;
-	protected Level1Controller controller;
+	protected AbstractLController controller;
 	protected UpDownNavigation navigation;
 	
 
@@ -20,7 +20,7 @@ public abstract class Holder : MonoBehaviour {
 	}
 
 	void Start() {
-		controller = sceneManager.GetComponent<Level1Controller>();
+		controller = sceneManager.GetComponent<AbstractLController>();
 		navigation = sceneManager.GetComponent<UpDownNavigation>();
 	}
 	
