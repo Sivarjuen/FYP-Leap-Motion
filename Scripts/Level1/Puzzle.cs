@@ -20,7 +20,10 @@ public abstract class Puzzle : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.M)){
 			completed = true;
 		}
-		if(completed) Debug.Log("FINISHED!");
+		//int matchedTiles = 0;
+		//foreach(PuzzleButton b in buttons){
+		//	if(b.isMatched()) matchedTiles++;
+		//}
 	}
 
 	public bool isCompleted(){
@@ -32,7 +35,7 @@ public abstract class Puzzle : MonoBehaviour {
 			toggled = true;
 			toggledButton = b;
 		} else {
-			if(getData(toggledButton) == getData(b)){
+			if(getData(toggledButton) == getData(b) && toggledButton.id != b.id){
 				matched++;
 				toggledButton.setMatched();
 				b.setMatched();

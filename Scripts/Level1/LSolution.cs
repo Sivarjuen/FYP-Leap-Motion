@@ -22,9 +22,18 @@ public class LSolution : MonoBehaviour {
 						return false;
 				}
 			case 2:
-				//todo
-				Debug.LogError("Not implemented");
-				return false;
+				switch(id){
+					case 1:
+						return(ball.getNumber() == 2 && ball.getColour() == 4);
+					case 2:
+						return(ball.getNumber() == 4 && ball.getColour() == 2);
+					case 3:
+						return(ball.getNumber() == 1 && ball.getColour() == 1);
+					case 4:
+						return(ball.getNumber() == 3 && ball.getColour() == 3);
+					default:
+						return false;
+				}
 			case 3:
 				//todo
 				Debug.LogError("Not implemented");

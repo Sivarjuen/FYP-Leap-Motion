@@ -14,6 +14,7 @@ public class PuzzleButton : MonoBehaviour {
 	public GameObject shapeObj;
 	private bool matched = false;
 	public Puzzle puzzle;
+	public int id;
 
 	void Start () {
 		Renderer renderer = GetComponent<Renderer>();
@@ -100,5 +101,9 @@ public class PuzzleButton : MonoBehaviour {
 
 	public bool isOn(){
 		return on;
+	}
+
+	public bool isMatched(){
+		return matched;
 	}
 }

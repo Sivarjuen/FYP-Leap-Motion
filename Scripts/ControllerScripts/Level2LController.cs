@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Level1LController : AbstractLController {
+public class Level2LController : AbstractLController {
 
 	public Image tube1, tube2, tube3, tube4;
 	public GameObject upIndicator, downIndicator;
+	public GameObject runes, emptyRunes, runeBalls;
+	public Puzzle shapePuzzle, colourPuzzle;
+	private bool completed = false;
 
 	override protected void initialiseTubes(){
 		tube1.fillAmount = 0.0f;
@@ -36,5 +39,16 @@ public class Level1LController : AbstractLController {
 
 	override protected void updateIndicators(){
 		//this is done by LNavigationController for Medium and Hard levels
+	}
+
+	override protected void checkSolution(){
+		if(!completed){
+			if(shapePuzzle.isCompleted() && colourPuzzle.isCompleted()){
+				completed = true;
+				emptyRunes.SetActive(false);
+				runes.SetActive(true);
+				runeBalls.SetActive(true);
+			}
+		}
 	}
 }

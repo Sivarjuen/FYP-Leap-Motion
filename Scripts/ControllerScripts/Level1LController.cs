@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Level2LController : AbstractLController {
+public class Level1LController : AbstractLController {
 
 	public Image tube1, tube2, tube3, tube4;
 	public GameObject upIndicator, downIndicator;
@@ -38,4 +38,6 @@ public class Level2LController : AbstractLController {
 		upIndicator.SetActive(!navigation.isFacingUp());
 		downIndicator.SetActive(navigation.isFacingUp());
 	}
+
+	override protected void checkSolution(){}
 }

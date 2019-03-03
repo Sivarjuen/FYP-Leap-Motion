@@ -27,12 +27,15 @@ public abstract class AbstractLController : MonoBehaviour {
 		if(!complete){
 			if(filled == tubes) complete = true;
 		}
+		checkSolution();
 	}
 
 	public void activate(int n){
 		filling = n;
 		timer = Time.time;
 	}
+
+	protected abstract void checkSolution();
 
 	protected abstract void initialiseTubes();
 

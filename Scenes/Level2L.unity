@@ -137,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 8574397}
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: -3, y: -348, z: 0}
+  m_LocalPosition: {x: -3, y: -340, z: 0}
   m_LocalScale: {x: 50.000786, y: 50.000786, z: 0.9989949}
   m_Children: []
   m_Father: {fileID: 1646710104}
@@ -379,6 +379,7 @@ MonoBehaviour:
   shape: 1
   shapeObj: {fileID: 1177860312}
   puzzle: {fileID: 2035351833}
+  id: 5
 --- !u!1 &38876373
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +501,7 @@ MonoBehaviour:
   shape: 1
   shapeObj: {fileID: 2039063128}
   puzzle: {fileID: 2035351833}
+  id: 14
 --- !u!1 &39231528
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +651,7 @@ MonoBehaviour:
   shape: 6
   shapeObj: {fileID: 775990118}
   puzzle: {fileID: 2035351833}
+  id: 6
 --- !u!1 &64793488
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +864,7 @@ MonoBehaviour:
   shape: 6
   shapeObj: {fileID: 630887285}
   puzzle: {fileID: 2035351833}
+  id: 15
 --- !u!1 &69144526
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +933,75 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 69144526}
+  m_CullTransparentMesh: 0
+--- !u!1 &86364609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 86364610}
+  - component: {fileID: 86364612}
+  - component: {fileID: 86364611}
+  m_Layer: 5
+  m_Name: Rune4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &86364610
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 86364609}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0008, y: 0.0008, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1431856691}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1.518, y: -0.526}
+  m_SizeDelta: {x: 1181, y: 1181}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &86364611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 86364609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 894580190c2cee84cac64a77a453c14c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &86364612
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 86364609}
   m_CullTransparentMesh: 0
 --- !u!1 &90250457
 GameObject:
@@ -1600,6 +1673,7 @@ MonoBehaviour:
   shape: 7
   shapeObj: {fileID: 977776221}
   puzzle: {fileID: 2035351833}
+  id: 7
 --- !u!1 &151568850
 GameObject:
   m_ObjectHideFlags: 0
@@ -3137,7 +3211,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 323867131}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -637, y: -59, z: 0}
+  m_LocalPosition: {x: -623, y: -59, z: 0}
   m_LocalScale: {x: 50.000786, y: 50.000786, z: 0.9989949}
   m_Children: []
   m_Father: {fileID: 1646710104}
@@ -3310,6 +3384,7 @@ MonoBehaviour:
   shape: 3
   shapeObj: {fileID: 173250752}
   puzzle: {fileID: 2035351833}
+  id: 1
 --- !u!1 &336558300
 GameObject:
   m_ObjectHideFlags: 0
@@ -3431,6 +3506,7 @@ MonoBehaviour:
   shape: 8
   shapeObj: {fileID: 1337534742}
   puzzle: {fileID: 2035351833}
+  id: 11
 --- !u!1 &337062431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3552,6 +3628,7 @@ MonoBehaviour:
   shape: 2
   shapeObj: {fileID: 69144526}
   puzzle: {fileID: 2035351833}
+  id: 10
 --- !u!1 &346121412
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,6 +3769,7 @@ MonoBehaviour:
   shape: 3
   shapeObj: {fileID: 1607298142}
   puzzle: {fileID: 1395257633}
+  id: 2
 --- !u!114 &350057068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4548,6 +4626,7 @@ MonoBehaviour:
   shape: 2
   shapeObj: {fileID: 1119614216}
   puzzle: {fileID: 2035351833}
+  id: 9
 --- !u!1 &495502787
 GameObject:
   m_ObjectHideFlags: 0
@@ -4562,7 +4641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &495502788
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4578,7 +4657,7 @@ RectTransform:
   - {fileID: 1185824939}
   - {fileID: 1840230885}
   m_Father: {fileID: 650755157}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4819,6 +4898,7 @@ MonoBehaviour:
   shape: 5
   shapeObj: {fileID: 1253872510}
   puzzle: {fileID: 2035351833}
+  id: 3
 --- !u!1 &538558373
 GameObject:
   m_ObjectHideFlags: 0
@@ -6122,6 +6202,7 @@ MonoBehaviour:
   shape: 2
   shapeObj: {fileID: 1730381632}
   puzzle: {fileID: 1395257633}
+  id: 12
 --- !u!114 &646705647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6243,6 +6324,7 @@ MonoBehaviour:
   shape: 6
   shapeObj: {fileID: 289734593}
   puzzle: {fileID: 1395257633}
+  id: 4
 --- !u!114 &647322334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6525,6 +6607,7 @@ RectTransform:
   m_Children:
   - {fileID: 1648883734}
   - {fileID: 724399134}
+  - {fileID: 1431856691}
   - {fileID: 495502788}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -6932,6 +7015,7 @@ MonoBehaviour:
   shape: 5
   shapeObj: {fileID: 1297709006}
   puzzle: {fileID: 1395257633}
+  id: 6
 --- !u!114 &691178635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7053,6 +7137,7 @@ MonoBehaviour:
   shape: 3
   shapeObj: {fileID: 1182349303}
   puzzle: {fileID: 1395257633}
+  id: 14
 --- !u!114 &695829370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7646,6 +7731,7 @@ MonoBehaviour:
   shape: 4
   shapeObj: {fileID: 697963175}
   puzzle: {fileID: 1395257633}
+  id: 16
 --- !u!114 &757222541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8141,6 +8227,7 @@ MonoBehaviour:
   shape: 7
   shapeObj: {fileID: 1811508249}
   puzzle: {fileID: 1395257633}
+  id: 13
 --- !u!114 &790788057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8623,6 +8710,7 @@ MonoBehaviour:
   shape: 1
   shapeObj: {fileID: 1085693904}
   puzzle: {fileID: 1395257633}
+  id: 3
 --- !u!114 &841125232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8806,6 +8894,11 @@ MonoBehaviour:
   tube4: {fileID: 370005869}
   upIndicator: {fileID: 1807845965}
   downIndicator: {fileID: 8574397}
+  runes: {fileID: 495502787}
+  emptyRunes: {fileID: 1431856690}
+  runeBalls: {fileID: 1797780067}
+  shapePuzzle: {fileID: 2035351833}
+  colourPuzzle: {fileID: 1395257633}
 --- !u!4 &862776173
 Transform:
   m_ObjectHideFlags: 0
@@ -9348,6 +9441,7 @@ MonoBehaviour:
   shape: 8
   shapeObj: {fileID: 1705853015}
   puzzle: {fileID: 1395257633}
+  id: 8
 --- !u!114 &904171282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9840,6 +9934,7 @@ MonoBehaviour:
   shape: 6
   shapeObj: {fileID: 507941905}
   puzzle: {fileID: 1395257633}
+  id: 11
 --- !u!114 &965578216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10033,6 +10128,7 @@ MonoBehaviour:
   shape: 8
   shapeObj: {fileID: 1062027586}
   puzzle: {fileID: 2035351833}
+  id: 12
 --- !u!1 &976160182
 GameObject:
   m_ObjectHideFlags: 0
@@ -11724,6 +11820,7 @@ MonoBehaviour:
   shape: 5
   shapeObj: {fileID: 118295955}
   puzzle: {fileID: 2035351833}
+  id: 8
 --- !u!1 &1154258206
 GameObject:
   m_ObjectHideFlags: 0
@@ -11964,7 +12061,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1164983748}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 638, y: -59, z: 0}
+  m_LocalPosition: {x: 622, y: -59, z: 0}
   m_LocalScale: {x: 50, y: 50, z: 1}
   m_Children: []
   m_Father: {fileID: 1646710104}
@@ -13808,6 +13905,7 @@ MonoBehaviour:
   shape: 4
   shapeObj: {fileID: 894865998}
   puzzle: {fileID: 2035351833}
+  id: 16
 --- !u!114 &1314003386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14390,6 +14488,7 @@ MonoBehaviour:
   shape: 7
   shapeObj: {fileID: 1699863251}
   puzzle: {fileID: 2035351833}
+  id: 2
 --- !u!1 &1368789429
 GameObject:
   m_ObjectHideFlags: 0
@@ -14527,6 +14626,7 @@ MonoBehaviour:
   shape: 7
   shapeObj: {fileID: 859602186}
   puzzle: {fileID: 1395257633}
+  id: 15
 --- !u!114 &1398540520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15040,6 +15140,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0e09e1432b59df244be2621401493a64,
     type: 3}
   m_PrefabInternal: {fileID: 1430346744}
+--- !u!1 &1431856690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1431856691}
+  m_Layer: 5
+  m_Name: EmptyRunes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1431856691
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1431856690}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2119703522}
+  - {fileID: 1673339845}
+  - {fileID: 1992674215}
+  - {fileID: 86364610}
+  m_Father: {fileID: 650755157}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1446796878
 GameObject:
   m_ObjectHideFlags: 0
@@ -15459,6 +15596,7 @@ MonoBehaviour:
   shape: 4
   shapeObj: {fileID: 1581471003}
   puzzle: {fileID: 2035351833}
+  id: 4
 --- !u!1 &1459503587
 GameObject:
   m_ObjectHideFlags: 0
@@ -15767,6 +15905,7 @@ MonoBehaviour:
   shape: 4
   shapeObj: {fileID: 1856003270}
   puzzle: {fileID: 1395257633}
+  id: 1
 --- !u!114 &1487416291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15979,6 +16118,7 @@ MonoBehaviour:
   shape: 5
   shapeObj: {fileID: 1459503587}
   puzzle: {fileID: 1395257633}
+  id: 9
 --- !u!114 &1496265912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16317,6 +16457,7 @@ MonoBehaviour:
   shape: 8
   shapeObj: {fileID: 1194405200}
   puzzle: {fileID: 1395257633}
+  id: 7
 --- !u!114 &1530632985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17557,6 +17698,7 @@ MonoBehaviour:
   shape: 2
   shapeObj: {fileID: 100334524}
   puzzle: {fileID: 1395257633}
+  id: 10
 --- !u!114 &1662531419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17629,6 +17771,75 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!1 &1673339844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1673339845}
+  - component: {fileID: 1673339847}
+  - component: {fileID: 1673339846}
+  m_Layer: 5
+  m_Name: Rune2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1673339845
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673339844}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0008, y: 0.0008, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1431856691}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.125, y: 0.712}
+  m_SizeDelta: {x: 1181, y: 1181}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1673339846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673339844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 894580190c2cee84cac64a77a453c14c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1673339847
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1673339844}
+  m_CullTransparentMesh: 0
 --- !u!1 &1683422773
 GameObject:
   m_ObjectHideFlags: 0
@@ -18077,7 +18288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1797780068
 Transform:
   m_ObjectHideFlags: 0
@@ -18216,6 +18427,7 @@ MonoBehaviour:
   shape: 3
   shapeObj: {fileID: 1464260727}
   puzzle: {fileID: 2035351833}
+  id: 13
 --- !u!1 &1799978540
 GameObject:
   m_ObjectHideFlags: 0
@@ -18268,7 +18480,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1807845965}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -3.0000007, y: 345, z: 0}
+  m_LocalPosition: {x: -3.0000007, y: 337, z: 0}
   m_LocalScale: {x: 50.00081, y: 50.00081, z: 0.9989949}
   m_Children: []
   m_Father: {fileID: 1646710104}
@@ -19041,6 +19253,7 @@ MonoBehaviour:
   shape: 1
   shapeObj: {fileID: 755192482}
   puzzle: {fileID: 1395257633}
+  id: 5
 --- !u!114 &1883654622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20091,6 +20304,75 @@ Transform:
   m_Father: {fileID: 1648883734}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1992674214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1992674215}
+  - component: {fileID: 1992674217}
+  - component: {fileID: 1992674216}
+  m_Layer: 5
+  m_Name: Rune3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1992674215
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1992674214}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0008, y: 0.0008, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1431856691}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1.152, y: 0.7119999}
+  m_SizeDelta: {x: 1181, y: 1181}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1992674216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1992674214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 894580190c2cee84cac64a77a453c14c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1992674217
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1992674214}
+  m_CullTransparentMesh: 0
 --- !u!1 &2035351832
 GameObject:
   m_ObjectHideFlags: 0
@@ -20917,6 +21199,75 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2135969812}
   m_Script: {fileID: 11500000, guid: 0625e574c0d47a241b7dfc7a8c67ca2b, type: 3}
+--- !u!1 &2119703521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2119703522}
+  - component: {fileID: 2119703524}
+  - component: {fileID: 2119703523}
+  m_Layer: 5
+  m_Name: Rune1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2119703522
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2119703521}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0008, y: 0.0008, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1431856691}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.482, y: -0.526}
+  m_SizeDelta: {x: 1181, y: 1181}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2119703523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2119703521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 894580190c2cee84cac64a77a453c14c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &2119703524
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2119703521}
+  m_CullTransparentMesh: 0
 --- !u!1 &2125785546
 GameObject:
   m_ObjectHideFlags: 0
