@@ -35,7 +35,6 @@ public class Level1LController : AbstractLController {
 	}
 
 	override protected void updateIndicators(){
-		upIndicator.SetActive(!navigation.isFacingUp());
-		downIndicator.SetActive(navigation.isFacingUp());
+		//this is done by LNavigationController for Medium and Hard levels
 	}
 }

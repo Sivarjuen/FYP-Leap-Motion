@@ -13,8 +13,6 @@ public class PuzzleButton : MonoBehaviour {
 	private Color targetColor;
 	public GameObject shapeObj;
 	private bool matched = false;
-	private float toggleDelay = .2f;
-	private float toggleTimer = 0;
 	public Puzzle puzzle;
 
 	void Start () {
@@ -26,6 +24,7 @@ public class PuzzleButton : MonoBehaviour {
 			_material = renderer.material;
 		}
 		offColor = _material.color;
+		targetColor = offColor;
 		shapeObj.SetActive(false);
 		getTargetColor();
 	}
@@ -35,33 +34,31 @@ public class PuzzleButton : MonoBehaviour {
 	}
 
 	private void toggle(){
-		if(!matched){
-			if(Time.time - toggleTimer >= toggleDelay){
-				if(on){
-					on = false;
-					targetColor = offColor;
-					shapeObj.SetActive(false);
-				} else {
-					on = true;
-					targetColor = onColor;
-					shapeObj.SetActive(true);
-				}
-				toggleTimer = Time.time;
-			}
+		if(on && !matched){
+			on = false;
+			targetColor = offColor;
+			shapeObj.SetActive(false);
+		} else {
+			on = true;
+			targetColor = onColor;
+			shapeObj.SetActive(true);
 		}
 	}
 
 	public void manualToggle(){
 		if(!matched){
 			toggle();
-			//TODO add delay here
-			puzzle.toggleReceived(this);
-			
+			StartCoroutine("sendMove");
 		}
 	}
 
+	IEnumerator sendMove(){
+		yield return new WaitForSeconds(.3f);
+		puzzle.toggleReceived(this);
+		yield return null;
+	}
+
 	public void autoToggle(){
-		// TODO add delay here
 		toggle();
 	}
 
@@ -96,6 +93,9 @@ public class PuzzleButton : MonoBehaviour {
 
 	public void setMatched(){
 		matched = true;
+		on = true;
+		targetColor = onColor;
+		shapeObj.SetActive(true);
 	}
 
 	public bool isOn(){

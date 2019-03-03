@@ -42,6 +42,7 @@ public abstract class Puzzle : MonoBehaviour {
 				b.autoToggle();
 			}
 			toggled = false;
+			toggledButton = null;
 		}
 	}
 
