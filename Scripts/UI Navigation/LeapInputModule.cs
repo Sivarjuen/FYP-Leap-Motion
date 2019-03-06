@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using Leap.Unity;
 using Leap;
 
+// NOTE: This is a highly modified version of the default Input Module provided by the LEAP Motion Unity SDK
+
 namespace Leap.Unity.InputModule {
   /** An InputModule that supports the use of Leap Motion tracking data for manipulating Unity UI controls. */
   public class LeapInputModule : BaseInputModule {
