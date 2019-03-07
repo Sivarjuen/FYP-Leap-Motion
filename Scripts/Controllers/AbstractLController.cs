@@ -17,17 +17,14 @@ public abstract class AbstractLController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		initialiseTubes();
-		updateIndicators();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		updateIndicators();
 		updateTubes();
 		if(!complete){
 			if(filled == tubes) complete = true;
-		}
-		checkSolution();
+		};
 	}
 
 	public void activate(int n){
@@ -35,13 +32,9 @@ public abstract class AbstractLController : MonoBehaviour {
 		timer = Time.time;
 	}
 
-	protected abstract void checkSolution();
-
 	protected abstract void initialiseTubes();
 
 	protected abstract void updateTubes();
-
-	protected abstract void updateIndicators();
 
 	protected void fillTube(Image tube){
 		float elapsed = Time.time - timer;

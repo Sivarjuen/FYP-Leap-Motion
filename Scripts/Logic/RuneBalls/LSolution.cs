@@ -4,24 +4,11 @@ using UnityEngine;
 
 public class LSolution : MonoBehaviour {
 
-	public int difficulty = 0;
+	public int level = 1;	// 1 - Level 1-1, 2 - Level 3-1
 
 	public bool checkBall(RuneBall ball, int id){
-		switch(difficulty){
+		switch(level){
 			case 1:
-				switch(id){
-					case 1:
-						return(ball.getNumber() == 1 && ball.getColour() == 3);
-					case 2:
-						return(ball.getNumber() == 2 && ball.getColour() == 1);
-					case 3:
-						return(ball.getNumber() == 3 && ball.getColour() == 2);
-					case 4:
-						return(ball.getNumber() == 4 && ball.getColour() == 4);
-					default:
-						return false;
-				}
-			case 2:
 				switch(id){
 					case 1:
 						return(ball.getNumber() == 2 && ball.getColour() == 4);
@@ -34,12 +21,11 @@ public class LSolution : MonoBehaviour {
 					default:
 						return false;
 				}
-			case 3:
-				//todo
-				Debug.LogError("Not implemented");
+			case 2:
+				Debug.LogError("Level 3-1 not completed!");
 				return false;
 			default:
-				Debug.LogError("Difficulty not set: 1 - Easy, 2 - Medium, 3 - Hard");
+				Debug.LogError("Level not set: 1 - Level 1-1, 2 - Level 3-1");
 				return false;
 		}
 	}
