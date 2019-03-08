@@ -42,6 +42,7 @@ public abstract class AbstractRController : MonoBehaviour {
 	protected void activate(){
 		arm.activate();
 		crane.activate();
+		activated = true;
 	}
 
 	protected void spawnBlock(int index, int type){

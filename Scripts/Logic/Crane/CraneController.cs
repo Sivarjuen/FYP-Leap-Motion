@@ -63,7 +63,6 @@ public class CraneController : MonoBehaviour {
 				newPosition = center;
 			}
 		}
-		print(state + " ");
 		if(grasped){
 			if(state == 1){
 				lastState = 1;

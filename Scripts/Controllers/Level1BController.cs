@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Level1BController : AbstractRController {
 
+	public PowerSlider power;
+
 	override protected bool checkSolution(){
 		//EASY SOLUTION:
 		//	Platform:	0	1	2	3	4	5	6	7	8
@@ -34,6 +36,8 @@ public class Level1BController : AbstractRController {
 	}
 
 	override protected void checkLevelSpecificCriteria(){
-		//TODO
+		if(power.isCompleted()){
+			activate();
+		}
 	}
 }
