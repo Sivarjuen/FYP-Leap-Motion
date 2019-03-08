@@ -16,7 +16,7 @@ public class PickupController : MonoBehaviour {
 	private int movementState = 0; // 0 - nothing, 1 - moving down, 2 - moving up
 	private int state = 0; // 0 - nothing, 1 - dropping, 2 - picking up
 	private float speed = 0.02f;
-	public Level1RController controller;
+	public AbstractRController controller;
 
 	// Use this for initialization
 	void Start () {

@@ -291,9 +291,6 @@ public class PowerPuzzle : MonoBehaviour {
 			}
 			completed = flag;
 		}
-		if(Input.GetKeyDown(KeyCode.M)){
-			completed = true;
-		}
 		
 	}
 

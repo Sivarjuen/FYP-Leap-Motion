@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level1RController : MonoBehaviour {
+public class OldCraneController : MonoBehaviour {
 
 	public ArmController arm;
 	public CraneController crane;

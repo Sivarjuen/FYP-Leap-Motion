@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NavigationController : MonoBehaviour {
+public class Level1BNavigationManager : MonoBehaviour {
 
 	public UpDownNavigation vertNavigation;
 	public LeftRightNavigation horzNavigation;
 	public GameObject upIndicator, downIndicator, rightIndicator, leftIndicator;
-	public Level1RController controller;
+	public AbstractRController controller;
 	private int indicatorState = 0; // 0 - up/left/right, 1 - left/right, 2 - down
 	private int previousState = 0;
 
