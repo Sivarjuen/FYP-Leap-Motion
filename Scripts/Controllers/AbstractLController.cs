@@ -25,6 +25,7 @@ public abstract class AbstractLController : MonoBehaviour {
 		if(!complete){
 			if(filled == tubes) complete = true;
 		};
+		checkLevelSpecificCriteria();
 	}
 
 	public void activate(int n){
@@ -35,6 +36,8 @@ public abstract class AbstractLController : MonoBehaviour {
 	protected abstract void initialiseTubes();
 
 	protected abstract void updateTubes();
+
+	protected abstract void checkLevelSpecificCriteria();
 
 	protected void fillTube(Image tube){
 		float elapsed = Time.time - timer;

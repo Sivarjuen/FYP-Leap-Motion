@@ -6,6 +6,7 @@ public class BallHolder : Holder {
 
 	public int id = 0;
 	public LSolution solution;
+	public GameObject successHighlight;
 
 	override protected void setRuneBall(RuneBall ball){
 		this.ball = ball;
@@ -18,6 +19,7 @@ public class BallHolder : Holder {
 		if(containsBall & ball != null){
 			if(solution.checkBall(ball, id)){
 				locked = true;
+				successHighlight.SetActive(true);
 				StartCoroutine(lookUpAndFill(id));
 			}
 		}

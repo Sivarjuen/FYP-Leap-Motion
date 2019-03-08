@@ -120,7 +120,8 @@ public class UpDownNavigation : MonoBehaviour {
 				targetPosition = pointUp.transform.position;
 				targetRotation = pointUp.transform.rotation;
 			} else {
-				targetRotation = Quaternion.Euler(0,0,0);
+				//targetRotation = Quaternion.Euler(0,0,0);
+				targetRotation = leapRig.transform.rotation * Quaternion.Inverse(Quaternion.Euler(60,0,0));
 			}
 		}
 	}
@@ -135,7 +136,8 @@ public class UpDownNavigation : MonoBehaviour {
 				targetPosition = pointDown.transform.position;
 				targetRotation = pointDown.transform.rotation;
 			} else {
-				targetRotation = Quaternion.Euler(60,0,0);
+				//targetRotation = Quaternion.Euler(60,0,0);
+				targetRotation = leapRig.transform.rotation * Quaternion.Euler(60,0,0);
 			}
 		}
 	}
