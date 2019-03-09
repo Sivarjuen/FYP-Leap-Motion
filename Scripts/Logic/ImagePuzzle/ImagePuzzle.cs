@@ -7,7 +7,8 @@ public class ImagePuzzle : MonoBehaviour {
 	private bool completed;
 	public ImageTile[] center, left, right;
 	private int[] original, leftSolution, rightSolution;
-	public Renderer light;
+	//public Renderer light;
+	public bool rightWall = true;
 	
 	// Use this for initialization
 	void Start () {
@@ -50,25 +51,47 @@ public class ImagePuzzle : MonoBehaviour {
 	}
 
 	private void initialiseSolutions(){
-		leftSolution[0] = original[2];
-		leftSolution[1] = original[5];
-		leftSolution[2] = original[8];
-		leftSolution[3] = original[1];
-		leftSolution[4] = original[4];
-		leftSolution[5] = original[7];
-		leftSolution[6] = original[0];
-		leftSolution[7] = original[3];
-		leftSolution[8] = original[6];
+		if(rightWall){
+			leftSolution[0] = original[2];
+			leftSolution[1] = original[5];
+			leftSolution[2] = original[8];
+			leftSolution[3] = original[1];
+			leftSolution[4] = original[4];
+			leftSolution[5] = original[7];
+			leftSolution[6] = original[0];
+			leftSolution[7] = original[3];
+			leftSolution[8] = original[6];
 
-		rightSolution[0] = original[6];
-		rightSolution[1] = original[3];
-		rightSolution[2] = original[0];
-		rightSolution[3] = original[7];
-		rightSolution[4] = original[4];
-		rightSolution[5] = original[1];
-		rightSolution[6] = original[8];
-		rightSolution[7] = original[5];
-		rightSolution[8] = original[2];
+			rightSolution[0] = original[6];
+			rightSolution[1] = original[3];
+			rightSolution[2] = original[0];
+			rightSolution[3] = original[7];
+			rightSolution[4] = original[4];
+			rightSolution[5] = original[1];
+			rightSolution[6] = original[8];
+			rightSolution[7] = original[5];
+			rightSolution[8] = original[2];
+		} else {
+			leftSolution[0] = original[8];
+			leftSolution[1] = original[7];
+			leftSolution[2] = original[6];
+			leftSolution[3] = original[5];
+			leftSolution[4] = original[4];
+			leftSolution[5] = original[3];
+			leftSolution[6] = original[2];
+			leftSolution[7] = original[1];
+			leftSolution[8] = original[0];
+
+			rightSolution[0] = original[2];
+			rightSolution[1] = original[5];
+			rightSolution[2] = original[8];
+			rightSolution[3] = original[1];
+			rightSolution[4] = original[4];
+			rightSolution[5] = original[7];
+			rightSolution[6] = original[0];
+			rightSolution[7] = original[3];
+			rightSolution[8] = original[6];
+		}
 	}
 
 	private void checkSolution(){
@@ -81,7 +104,7 @@ public class ImagePuzzle : MonoBehaviour {
 		}
 		if(correct == 9){
 			completed = true;
-			light.material.color = Color.green;
+			//light.material.color = Color.green;
 		}
 	}
 }
