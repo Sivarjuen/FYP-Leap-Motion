@@ -212,6 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6208159}
+  - component: {fileID: 6208160}
   m_Layer: 0
   m_Name: Button8
   m_TagString: Untagged
@@ -233,6 +234,17 @@ Transform:
   m_Father: {fileID: 1257444020}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6208160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 6208158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8574397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 64867114}
+  - component: {fileID: 64867115}
   m_Layer: 0
   m_Name: RightPuzzle
   m_TagString: Untagged
@@ -1337,17 +1350,59 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 64867113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.041, y: 0.0151, z: 0.044}
+  m_LocalPosition: {x: 0.0784, y: 0.0219, z: 0.044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2035351834}
-  - {fileID: 888779951}
   - {fileID: 1235873519}
   - {fileID: 1135623251}
   - {fileID: 1468092297}
+  - {fileID: 888779951}
   m_Father: {fileID: 197125138}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &64867115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64867113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee278632a157edf41805a2f498001d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center:
+  - {fileID: 2038385446}
+  - {fileID: 1799978542}
+  - {fileID: 773749421}
+  - {fileID: 310369569}
+  - {fileID: 365205841}
+  - {fileID: 1905960223}
+  - {fileID: 1028476918}
+  - {fileID: 1180357541}
+  - {fileID: 538558375}
+  left:
+  - {fileID: 579890301}
+  - {fileID: 1765816701}
+  - {fileID: 565551294}
+  - {fileID: 693224596}
+  - {fileID: 1531426656}
+  - {fileID: 787132211}
+  - {fileID: 735604367}
+  - {fileID: 6208160}
+  - {fileID: 1908867007}
+  right:
+  - {fileID: 1104334657}
+  - {fileID: 193987586}
+  - {fileID: 1999567819}
+  - {fileID: 390862218}
+  - {fileID: 453554392}
+  - {fileID: 477331533}
+  - {fileID: 354494669}
+  - {fileID: 1391598312}
+  - {fileID: 1814482851}
+  light: {fileID: 888779953}
 --- !u!1 &82791591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,7 +1478,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 787132211}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &82791595
@@ -2438,6 +2504,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 193987585}
+  - component: {fileID: 193987586}
   m_Layer: 0
   m_Name: Button2
   m_TagString: Untagged
@@ -2459,6 +2526,17 @@ Transform:
   m_Father: {fileID: 1256809218}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &193987586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 193987584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &195662053
 GameObject:
   m_ObjectHideFlags: 0
@@ -3688,6 +3766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 310369568}
+  - component: {fileID: 310369569}
   m_Layer: 0
   m_Name: Button4
   m_TagString: Untagged
@@ -3709,6 +3788,17 @@ Transform:
   m_Father: {fileID: 518017069}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &310369569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310369567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &314973356
 Prefab:
   m_ObjectHideFlags: 0
@@ -4348,7 +4438,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1814482851}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &349303190
@@ -4497,6 +4598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 354494668}
+  - component: {fileID: 354494669}
   m_Layer: 0
   m_Name: Button7
   m_TagString: Untagged
@@ -4518,6 +4620,17 @@ Transform:
   m_Father: {fileID: 1256809218}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &354494669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 354494667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &363105818
 GameObject:
   m_ObjectHideFlags: 0
@@ -4616,6 +4729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 365205840}
+  - component: {fileID: 365205841}
   m_Layer: 0
   m_Name: Button5
   m_TagString: Untagged
@@ -4637,6 +4751,17 @@ Transform:
   m_Father: {fileID: 518017069}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &365205841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 365205839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &376914945
 GameObject:
   m_ObjectHideFlags: 0
@@ -4781,7 +4906,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 693224596}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &380901742
@@ -4808,6 +4944,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 390862217}
+  - component: {fileID: 390862218}
   m_Layer: 0
   m_Name: Button4
   m_TagString: Untagged
@@ -4829,6 +4966,17 @@ Transform:
   m_Father: {fileID: 1256809218}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &390862218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 390862216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &394040432
 GameObject:
   m_ObjectHideFlags: 0
@@ -4904,7 +5052,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 565551294}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &394040436
@@ -5351,7 +5510,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765816701}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &443347286
@@ -5512,7 +5682,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1999567819}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &451379870
@@ -5539,6 +5720,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 453554391}
+  - component: {fileID: 453554392}
   m_Layer: 0
   m_Name: Button5
   m_TagString: Untagged
@@ -5560,6 +5742,17 @@ Transform:
   m_Father: {fileID: 1256809218}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &453554392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 453554390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &466455450
 GameObject:
   m_ObjectHideFlags: 0
@@ -5876,6 +6069,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477331532}
+  - component: {fileID: 477331533}
   m_Layer: 0
   m_Name: Button6
   m_TagString: Untagged
@@ -5897,6 +6091,17 @@ Transform:
   m_Father: {fileID: 1256809218}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &477331533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 477331531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &477487658
 GameObject:
   m_ObjectHideFlags: 0
@@ -6297,6 +6502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 538558374}
+  - component: {fileID: 538558375}
   m_Layer: 0
   m_Name: Button9
   m_TagString: Untagged
@@ -6318,6 +6524,17 @@ Transform:
   m_Father: {fileID: 518017069}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &538558375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 538558373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &545204894
 GameObject:
   m_ObjectHideFlags: 0
@@ -6804,6 +7021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 565551293}
+  - component: {fileID: 565551294}
   m_Layer: 0
   m_Name: Button3
   m_TagString: Untagged
@@ -6825,6 +7043,17 @@ Transform:
   m_Father: {fileID: 1257444020}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &565551294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 565551292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &571175749
 GameObject:
   m_ObjectHideFlags: 0
@@ -7088,6 +7317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 579890300}
+  - component: {fileID: 579890301}
   m_Layer: 0
   m_Name: Button1
   m_TagString: Untagged
@@ -7109,6 +7339,17 @@ Transform:
   m_Father: {fileID: 1257444020}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &579890301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 579890299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &586461582
 GameObject:
   m_ObjectHideFlags: 0
@@ -7651,7 +7892,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1531426656}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &624123183
@@ -8365,6 +8617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693224595}
+  - component: {fileID: 693224596}
   m_Layer: 0
   m_Name: Button4
   m_TagString: Untagged
@@ -8386,6 +8639,17 @@ Transform:
   m_Father: {fileID: 1257444020}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693224596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 693224594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &695829367
 GameObject:
   m_ObjectHideFlags: 0
@@ -8709,6 +8973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 735604366}
+  - component: {fileID: 735604367}
   m_Layer: 0
   m_Name: Button7
   m_TagString: Untagged
@@ -8730,6 +8995,17 @@ Transform:
   m_Father: {fileID: 1257444020}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &735604367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 735604365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &748788387
 GameObject:
   m_ObjectHideFlags: 0
@@ -9491,7 +9767,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 193987586}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &767930484
@@ -9653,6 +9940,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 773749420}
+  - component: {fileID: 773749421}
   m_Layer: 0
   m_Name: Button3
   m_TagString: Untagged
@@ -9674,6 +9962,17 @@ Transform:
   m_Father: {fileID: 518017069}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &773749421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773749419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &781659914
 GameObject:
   m_ObjectHideFlags: 0
@@ -9809,6 +10108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 787132210}
+  - component: {fileID: 787132211}
   m_Layer: 0
   m_Name: Button6
   m_TagString: Untagged
@@ -9830,6 +10130,17 @@ Transform:
   m_Father: {fileID: 1257444020}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &787132211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 787132209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &790788054
 GameObject:
   m_ObjectHideFlags: 0
@@ -10743,7 +11054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e3aea999dea3149b5eacc7d11ec81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevel: 1
+  firstLevel: 0
   colourPuzzle: {fileID: 0}
   shapePuzzle: {fileID: 0}
   powerPuzzle: {fileID: 430332546}
@@ -10891,12 +11202,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 888779950}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5000001}
-  m_LocalPosition: {x: 13.427007, y: 0.25530002, z: 1.036}
+  m_LocalPosition: {x: 13.427007, y: 0.25530002, z: 1.0334}
   m_LocalScale: {x: 0.03500004, y: 0.03500003, z: 0.03500002}
   m_Children:
   - {fileID: 1400755425}
   m_Father: {fileID: 64867114}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90.00001, y: 90, z: 90.00001}
 --- !u!136 &888779952
 CapsuleCollider:
@@ -12429,6 +12740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1028476917}
+  - component: {fileID: 1028476918}
   m_Layer: 0
   m_Name: Button7
   m_TagString: Untagged
@@ -12450,6 +12762,17 @@ Transform:
   m_Father: {fileID: 518017069}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1028476918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1028476916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1028584297
 Prefab:
   m_ObjectHideFlags: 0
@@ -13256,7 +13579,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1104334657}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &1091875169
@@ -13449,6 +13783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1104334656}
+  - component: {fileID: 1104334657}
   m_Layer: 0
   m_Name: Button1
   m_TagString: Untagged
@@ -13470,6 +13805,17 @@ Transform:
   m_Father: {fileID: 1256809218}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1104334657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104334655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1113942693
 GameObject:
   m_ObjectHideFlags: 0
@@ -13615,7 +13961,7 @@ Transform:
   m_Children:
   - {fileID: 1256809218}
   m_Father: {fileID: 64867114}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1137170169
 GameObject:
@@ -13692,7 +14038,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 477331533}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &1137170173
@@ -13786,7 +14143,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6208160}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &1140177350
@@ -14288,7 +14656,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 735604367}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &1166926939
@@ -14474,6 +14853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1180357540}
+  - component: {fileID: 1180357541}
   m_Layer: 0
   m_Name: Button8
   m_TagString: Untagged
@@ -14495,6 +14875,17 @@ Transform:
   m_Father: {fileID: 518017069}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1180357541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1180357539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1182349303
 GameObject:
   m_ObjectHideFlags: 0
@@ -15220,7 +15611,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1391598312}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &1228160823
@@ -15356,7 +15758,7 @@ Transform:
   m_Children:
   - {fileID: 1257444020}
   m_Father: {fileID: 64867114}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1249958582
 GameObject:
@@ -16899,6 +17301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1391598311}
+  - component: {fileID: 1391598312}
   m_Layer: 0
   m_Name: Button8
   m_TagString: Untagged
@@ -16920,6 +17323,17 @@ Transform:
   m_Father: {fileID: 1256809218}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1391598312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1391598310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1395257631
 GameObject:
   m_ObjectHideFlags: 0
@@ -18066,7 +18480,7 @@ RectTransform:
   - {fileID: 301381560}
   - {fileID: 974427629}
   m_Father: {fileID: 64867114}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -19045,6 +19459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1531426655}
+  - component: {fileID: 1531426656}
   m_Layer: 0
   m_Name: Button5
   m_TagString: Untagged
@@ -19066,6 +19481,17 @@ Transform:
   m_Father: {fileID: 1257444020}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1531426656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1531426654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1538998775
 GameObject:
   m_ObjectHideFlags: 0
@@ -20183,7 +20609,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 579890301}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &1594618029
@@ -20277,7 +20714,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 390862218}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &1595295301
@@ -21588,7 +22036,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 453554392}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &1720042213
@@ -22092,6 +22551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1765816700}
+  - component: {fileID: 1765816701}
   m_Layer: 0
   m_Name: Button2
   m_TagString: Untagged
@@ -22113,6 +22573,17 @@ Transform:
   m_Father: {fileID: 1257444020}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1765816701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1765816699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1776077984 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20158728313415276, guid: 2fb3f37bed4bc854bb2b534d625d18d5,
@@ -22216,6 +22687,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1799978541}
+  - component: {fileID: 1799978542}
   m_Layer: 0
   m_Name: Button2
   m_TagString: Untagged
@@ -22237,6 +22709,17 @@ Transform:
   m_Father: {fileID: 518017069}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1799978542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1799978540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1807845965
 GameObject:
   m_ObjectHideFlags: 0
@@ -22479,6 +22962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1814482850}
+  - component: {fileID: 1814482851}
   m_Layer: 0
   m_Name: Button9
   m_TagString: Untagged
@@ -22500,6 +22984,17 @@ Transform:
   m_Father: {fileID: 1256809218}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814482851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1814482849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1827526278
 GameObject:
   m_ObjectHideFlags: 0
@@ -23114,7 +23609,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1908867007}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &1882618837
@@ -23616,6 +24122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1905960222}
+  - component: {fileID: 1905960223}
   m_Layer: 0
   m_Name: Button6
   m_TagString: Untagged
@@ -23637,6 +24144,17 @@ Transform:
   m_Father: {fileID: 518017069}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1905960223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1905960221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1908867005
 GameObject:
   m_ObjectHideFlags: 0
@@ -23645,6 +24163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1908867006}
+  - component: {fileID: 1908867007}
   m_Layer: 0
   m_Name: Button9
   m_TagString: Untagged
@@ -23666,6 +24185,17 @@ Transform:
   m_Father: {fileID: 1257444020}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1908867007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1908867005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1939481788
 GameObject:
   m_ObjectHideFlags: 0
@@ -24475,6 +25005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1999567818}
+  - component: {fileID: 1999567819}
   m_Layer: 0
   m_Name: Button3
   m_TagString: Untagged
@@ -24496,6 +25027,17 @@ Transform:
   m_Father: {fileID: 1256809218}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1999567819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999567817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2018622077
 GameObject:
   m_ObjectHideFlags: 0
@@ -24623,6 +25165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2038385445}
+  - component: {fileID: 2038385446}
   m_Layer: 0
   m_Name: Button1
   m_TagString: Untagged
@@ -24644,6 +25187,17 @@ Transform:
   m_Father: {fileID: 518017069}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2038385446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2038385444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a835f79d15297b4da4012682e0decc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2040716079
 GameObject:
   m_ObjectHideFlags: 0
@@ -25901,7 +26455,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   _OnUnpress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 354494669}
+        m_MethodName: toggleColour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!54 &2105826803

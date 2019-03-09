@@ -40,16 +40,6 @@ public class Level2Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		string s = "";
-		string a = "";
-		s += lightSolution[0];
-		s += lightSolution[1];
-		s += lightSolution[2];
-		a += solutionState[0];
-		a += solutionState[1];
-		a += solutionState[2];
-		Debug.Log("Solution: " + s);
-		Debug.Log("My answer: " + a);
 		if(!levelCompleted){
 			if(firstLevel){
 				if(!cpCompleted && colourPuzzle.isCompleted()) {
