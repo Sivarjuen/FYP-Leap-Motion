@@ -16,7 +16,7 @@ public class BallHolder : Holder {
 
 
 	private void checkBall(){
-		if(containsBall & ball != null){
+		if(containsBall && ball != null){
 			if(solution.checkBall(ball, id)){
 				locked = true;
 				successHighlight.SetActive(true);

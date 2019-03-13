@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000012, guid: 62e19d083f5641b4c810bef1a23bf218,
+  m_LightingDataAsset: {fileID: 112000012, guid: 65840479222115e4ead315548c00319b,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -430,10 +430,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1230176970}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 1425479944}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1001 &30361375
 Prefab:
   m_ObjectHideFlags: 0
@@ -711,7 +713,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: c49b4153c4032784bbc659f359b10954, type: 2}
     - target: {fileID: 100000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_TagString
-      value: RuneBall
+      value: MathBall
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -1572,10 +1574,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1585266398}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 546404708}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &90250457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,10 +2017,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1514427916}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 1355190294}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1001 &123303127
 Prefab:
   m_ObjectHideFlags: 0
@@ -2082,7 +2088,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: c49b4153c4032784bbc659f359b10954, type: 2}
     - target: {fileID: 100000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_TagString
-      value: RuneBall
+      value: MathBall
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -3024,7 +3030,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: c49b4153c4032784bbc659f359b10954, type: 2}
     - target: {fileID: 100000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_TagString
-      value: RuneBall
+      value: MathBall
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -3460,10 +3466,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 2045672661}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 1645713141}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &247931558
 GameObject:
   m_ObjectHideFlags: 0
@@ -4657,10 +4665,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1312448619}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 618431703}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &346121412
 GameObject:
   m_ObjectHideFlags: 0
@@ -5447,10 +5457,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1406380392}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 1424394824}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &412623288
 GameObject:
   m_ObjectHideFlags: 0
@@ -5611,7 +5623,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: c49b4153c4032784bbc659f359b10954, type: 2}
     - target: {fileID: 100000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_TagString
-      value: RuneBall
+      value: MathBall
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -6114,7 +6126,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: c49b4153c4032784bbc659f359b10954, type: 2}
     - target: {fileID: 100000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_TagString
-      value: RuneBall
+      value: MathBall
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -7656,10 +7668,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 453980254}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 1669590549}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &622701344
 GameObject:
   m_ObjectHideFlags: 0
@@ -8994,10 +9008,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1278858733}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 1741218327}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &690822395
 GameObject:
   m_ObjectHideFlags: 0
@@ -10552,10 +10568,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1162255287}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 1200703005}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &801849759
 GameObject:
   m_ObjectHideFlags: 0
@@ -11383,13 +11401,13 @@ MonoBehaviour:
   tube2: {fileID: 589730039}
   tube3: {fileID: 1977857410}
   tube4: {fileID: 370005869}
-  upIndicator: {fileID: 1807845965}
-  downIndicator: {fileID: 8574397}
   runes: {fileID: 495502787}
   emptyRunes: {fileID: 1431856690}
   runeBalls: {fileID: 1797780067}
-  shapePuzzle: {fileID: 2035351833}
-  colourPuzzle: {fileID: 1395257633}
+  holder1: {fileID: 0}
+  holder2: {fileID: 0}
+  holder3: {fileID: 0}
+  holder4: {fileID: 0}
 --- !u!4 &862776173
 Transform:
   m_ObjectHideFlags: 0
@@ -11428,7 +11446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd246db3f34075949a17be5c48da77ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty: 2
+  level: 1
 --- !u!114 &862776176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11939,7 +11957,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: c49b4153c4032784bbc659f359b10954, type: 2}
     - target: {fileID: 100000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_TagString
-      value: RuneBall
+      value: MathBall
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -13476,8 +13494,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1173243482}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 151568851}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
 --- !u!1 &1085693904
 GameObject:
   m_ObjectHideFlags: 0
@@ -15004,10 +15023,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 374100028}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 4382894}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1001 &1190949482
 Prefab:
   m_ObjectHideFlags: 0
@@ -15687,10 +15708,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 575032149}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 46059847}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &1230176970
 GameObject:
   m_ObjectHideFlags: 0
@@ -16541,7 +16564,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: c49b4153c4032784bbc659f359b10954, type: 2}
     - target: {fileID: 100000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_TagString
-      value: RuneBall
+      value: MathBall
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -17750,10 +17773,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1459425632}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 2121929162}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &1378617634
 GameObject:
   m_ObjectHideFlags: 0
@@ -17889,7 +17914,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: c49b4153c4032784bbc659f359b10954, type: 2}
     - target: {fileID: 100000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_TagString
-      value: RuneBall
+      value: MathBall
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -18535,7 +18560,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: c49b4153c4032784bbc659f359b10954, type: 2}
     - target: {fileID: 100000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_TagString
-      value: RuneBall
+      value: MathBall
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -19221,10 +19246,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 996814042}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 1493527141}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &1459425632
 GameObject:
   m_ObjectHideFlags: 0
@@ -20782,7 +20809,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: c49b4153c4032784bbc659f359b10954, type: 2}
     - target: {fileID: 100000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_TagString
-      value: RuneBall
+      value: MathBall
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 0e09e1432b59df244be2621401493a64, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -21351,10 +21378,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 211328631}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 541343197}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &1607298142
 GameObject:
   m_ObjectHideFlags: 0
@@ -22454,7 +22483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797780068}
   m_Layer: 0
-  m_Name: RuneBalls
+  m_Name: MathBalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22718,10 +22747,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 1400723446}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 1143832663}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &1807845965
 GameObject:
   m_ObjectHideFlags: 0
@@ -23311,10 +23342,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 2050414787}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 2073927858}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &1872886465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 0e09e1432b59df244be2621401493a64,
@@ -24831,10 +24864,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 59489322}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 2009823093}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 2
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &2009823092
 GameObject:
   m_ObjectHideFlags: 0
@@ -26153,10 +26188,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlight: {fileID: 647769789}
-  sceneManager: {fileID: 862776171}
   ballPosition: {fileID: 479451338}
+  controller: {fileID: 0}
+  navigation: {fileID: 0}
   id: 3
   solution: {fileID: 862776175}
+  successHighlight: {fileID: 0}
 --- !u!1 &2119703521
 GameObject:
   m_ObjectHideFlags: 0

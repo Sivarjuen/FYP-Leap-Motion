@@ -11,5 +11,10 @@ public class TableBounds : MonoBehaviour {
 			ball.respawn();
 			Debug.Log("Respawning!");
 		}
+		if(go.tag.Equals("Object")){
+			ObjectDescriptor o = go.GetComponent<ObjectDescriptor>();
+			o.respawn();
+			Debug.Log("Respawning!");
+		}
 	}
 }
