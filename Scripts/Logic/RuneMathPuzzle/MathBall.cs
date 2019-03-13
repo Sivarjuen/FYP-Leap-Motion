@@ -5,7 +5,7 @@ using Leap.Unity.Interaction;
 
 public class MathBall : MonoBehaviour {
 
-	private int colour; // 1 = Red, 2 = Blue, 3 = Purple, 4 = Green, 5 = Yellow
+	private int colour; // 1 = Red, 2 = Blue, 3 = Purple, 4 = Green
 	private bool grasped;
 	private Renderer renderer;
 	private InteractionBehaviour interactionScript;
@@ -45,7 +45,7 @@ public class MathBall : MonoBehaviour {
 	}
 
 	public void changeColour(){
-		if(this.colour == 5){
+		if(this.colour == 4){
 			this.colour = 1;
 		} else{
 			this.colour++;
@@ -63,9 +63,6 @@ public class MathBall : MonoBehaviour {
 				break;
 			case 4:
 				this.renderer.material.color = Color.green;
-				break;
-			case 5:
-				this.renderer.material.color = Color.yellow;
 				break;
 		}
 	}

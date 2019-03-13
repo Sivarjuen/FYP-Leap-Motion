@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MathPuzzle : MonoBehaviour {
 
@@ -8,15 +9,20 @@ public class MathPuzzle : MonoBehaviour {
 	public MathSolution solution;
 	private bool completed;
 	private bool active = false;
+	public Image highlight;
+	public GameObject gameObject;
 
-	// Use this for initialization
-	void Start () {
+	void Awake() {
 		completed = false;
+		gameObject.SetActive(false);
 	}
 
 	public void notifyPuzzle(){
 		if(active && !completed){
 			completed = solution.checkSolution(puzzleNumber);
+			if(completed){
+				highlight.color = Color.green;
+			}
 		}
 	}
 
@@ -30,5 +36,6 @@ public class MathPuzzle : MonoBehaviour {
 
 	public void activate(){
 		active = true;
+		gameObject.SetActive(true);
 	}
 }

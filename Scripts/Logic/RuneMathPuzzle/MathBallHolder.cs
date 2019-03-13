@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MathBallHolder : AbstractHolder {
 
-	public int id;
+	public bool left = true;
 	public MathSolution solution;
 	private int value = 0;
 
@@ -14,7 +14,7 @@ public class MathBallHolder : AbstractHolder {
 
 	override protected void updateValue(){
 		if(containsBall && ball != null){
-			value = solution.getValue(ball.getColour());
+			value = solution.determineValue(ball.getColour(), left);
 			solution.notifyPuzzles();
 		}
 	}
