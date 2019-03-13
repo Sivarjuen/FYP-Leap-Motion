@@ -16,5 +16,20 @@ public class TableBounds : MonoBehaviour {
 			o.respawn();
 			Debug.Log("Respawning!");
 		}
+		if(go.tag.Equals("MathBall")){
+			MathBall o = go.GetComponent<MathBall>();
+			o.respawn();
+			Debug.Log("Respawning!");
+		}
+		if(go.tag.Equals("RedBall")){
+			RomanBall o = go.GetComponent<RomanBall>();
+			o.respawn();
+			Debug.Log("Respawning!");
+		}
+		if(go.tag.Equals("BlueBall")){
+			RomanBall o = go.GetComponent<RomanBall>();
+			o.respawn();
+			Debug.Log("Respawning!");
+		}
 	}
 }
