@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Block : MonoBehaviour {
 
-	private int type; // 0 = blue, 1 = red, 2 = green, 3 = yellow, 4 = purple
+	private int type; // 0 = blue, 1 = red, 2 = green, 3 = yellow, 4 = purple, 5 = white
 	private Renderer renderer;
 
 	public void initialise(int type){
@@ -29,6 +29,9 @@ public class Block : MonoBehaviour {
 				break;
 			case 4:
 				renderer.material.color = Color.magenta;
+				break;
+			case 5:
+				renderer.material.color = Color.white;
 				break;
 		}
 	}
