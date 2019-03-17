@@ -7,7 +7,7 @@ using Leap.Unity.Interaction;
 public class CraneController : MonoBehaviour {
 
 	private float limit = 0.004f;
-	private float centerLimit = 0.002f;
+	private float centerLimit = 0.004f;
 	private Vector3 center;
 	private bool grasped;
 	private InteractionBehaviour interactionScript;
@@ -42,13 +42,22 @@ public class CraneController : MonoBehaviour {
 		Vector3 newPosition = transform.position;
 		float centerDiffX = Mathf.Abs(newPosition.x - center.x);
 		float centerDiffY = Mathf.Abs(newPosition.y - center.y);
-		if(centerDiffX < centerLimit && centerDiffY < centerLimit){
+		if(centerDiffX > centerDiffY && centerDiffY < centerLimit && state == 1){
+			state = 0;
+		} else if(centerDiffY > centerDiffX && centerDiffX < centerLimit && state == 2){
 			state = 0;
 		}
+		if((centerDiffX < centerLimit && centerDiffY < centerLimit) || (centerDiffX < centerLimit && lastState == 1) || (centerDiffY < centerLimit && lastState == 2)){
+			state = 0;
+		}
+		Debug.Log("State: " + state + " - " + centerDiffX + " - " + centerDiffY);
 		if(state == 0){
 			if(Time.time > stateTimer + stateDelay){
 				if(centerDiffX > centerLimit || centerDiffY > centerLimit){
-					if(centerDiffX > centerDiffY){
+					//if(centerDiffX > centerDiffY){
+					float lastDiffX = Mathf.Abs(newPosition.x - lastX);
+					float lastDiffY = Mathf.Abs(newPosition.y - lastY);
+					if(lastDiffX > lastDiffY){
 						state = 2;
 					} else {
 						state = 1;
@@ -89,7 +98,7 @@ public class CraneController : MonoBehaviour {
 		if(newX - lastX > speed) newX = lastX + speed;
 		if(newX - lastX < -speed) newX = lastX - speed;
 		if(newY - lastY > speed) newY = lastY + speed;
-		if(newX - lastX < -speed) newY = lastY - speed;
+		if(newY - lastY < -speed) newY = lastY - speed;
 
 		newPosition.x = newX;
 		newPosition.y = newY;
