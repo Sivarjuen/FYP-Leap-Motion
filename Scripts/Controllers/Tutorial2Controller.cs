@@ -56,8 +56,12 @@ public class Tutorial2Controller : MonoBehaviour {
 	IEnumerator DelayedStart() { //TODO
 		player.Prepare();
 		yield return new WaitForSeconds(1);
-		text.text = "The next room will require to look left and right";
-		yield return new WaitForSeconds(3);
+		text.text = "This is the horizontal navigation tutorial";
+		yield return new WaitForSeconds(6);
+		text.text = "";
+		yield return new WaitForSeconds(0.2f);
+		text.text = "Here you will learn how to look left and right using your hands";
+		yield return new WaitForSeconds(6);
 		text.text = "";
 		yield return new WaitForSeconds(0.2f);
 		text.text = "Examine the demonstration below to see how this is done";
@@ -181,7 +185,7 @@ public class Tutorial2Controller : MonoBehaviour {
 						navigation.lockLeftMovement(true);
 						leftIndicator.SetActive(false);
 						rightIndicator.SetActive(false);
-						text.text = "You're ready to tackle the second level";
+						text.text = "You're ready to tackle THE COMPLEX!";
 						yield return new WaitForSeconds(4f);
 						text.text = "3";
 						yield return new WaitForSeconds(1f);
