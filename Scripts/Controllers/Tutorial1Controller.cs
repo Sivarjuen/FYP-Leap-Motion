@@ -46,11 +46,11 @@ public class Tutorial1Controller : MonoBehaviour {
 	IEnumerator DelayedStart() {
 		player.Prepare();
 		yield return new WaitForSeconds(1);
-		topText.text = "Wait!";
-		yield return new WaitForSeconds(3);
+		topText.text = "This is the vertical navigation tutorial";
+		yield return new WaitForSeconds(6);
 		topText.text = "";
 		yield return new WaitForSeconds(0.2f);
-		topText.text = "The room you're about to enter will require you to look up and down";
+		topText.text = "Here you will learn how to look up and down using your hands";
 		yield return new WaitForSeconds(6);
 		topText.text = "";
 		yield return new WaitForSeconds(0.2f);
@@ -158,33 +158,33 @@ public class Tutorial1Controller : MonoBehaviour {
 						//downIndicator.SetActive(false);
 						toggleLight(1, 1);
 						topText.text = "";
-						bottomText.text = "Great job! Now look up!";
+						bottomText.text = "Now look up";
 						//upIndicator.SetActive(true);
 						break;
 					case 2:
 						//upIndicator.SetActive(false);
 						toggleLight(0, 1);
-						topText.text = "You're getting the hang of this. Look down again!";
+						topText.text = "Great! Now look down again...";
 						//downIndicator.SetActive(true);
 						break;
 					case 3:
 						//downIndicator.SetActive(false);
 						toggleLight(1, 2);
-						bottomText.text = "This is the last one I promise. Look up!";
+						bottomText.text = "... and look up";
 						//upIndicator.SetActive(true);
 						break;
 					case 4:
 						//downIndicator.SetActive(true);
 						//upIndicator.SetActive(false);
 						toggleLight(0, 2);
-						topText.text = "You're ready to tackle the first level";
-						bottomText.text = "You're ready to tackle the first level";
-						yield return new WaitForSeconds(4f);
+						topText.text = "Remember the LEAP Motion is not perfect, so it might take multiple tries to look in a different direction";
+						bottomText.text = "Remember the LEAP Motion is not perfect, so it might take multiple tries to look in a different direction";
+						yield return new WaitForSeconds(8f);
 						topText.text = "";
 						bottomText.text = "";
 						yield return new WaitForSeconds(.2f);
-						topText.text = "While we are preparing the room, feel free to practice looking up and down a few more times";
-						bottomText.text = "While we are preparing the room, feel free to practice looking up and down a few more times";
+						topText.text = "While the next tutorial room is being prepared, feel free to practice looking up and down a few more times";
+						bottomText.text = "While the next tutorial room is being prepared, feel free to practice looking up and down a few more times";
 						yield return new WaitForSeconds(12f);
 						topText.text = "3";
 						bottomText.text = "3";
