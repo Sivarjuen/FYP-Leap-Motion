@@ -57,4 +57,8 @@ public class Level3BController : AbstractRController {
 			puzzleController.activate();
 		}
 	}
+
+	override protected void loadNextLevel(){
+		//todo
+	}
 }

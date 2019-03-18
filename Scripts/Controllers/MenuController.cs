@@ -8,7 +8,10 @@ public class MenuController : AbstractController {
 
 	public GameObject leftSliderObj, rightSliderObj, scoreSliderObj, optionsSliderObj, exitSliderObj;
 	private Slider leftSlider, rightSlider, scoreSlider, optionsSlider, exitSlider;
-	public GameObject leftText, leftLock, rightText, rightLock;
+	public GameObject leftText, leftLock, leftTick, rightText, rightLock, rightTick;
+	public GameObject leftLight, rightLight;
+	public bool debug = true;
+	public int startState = 0;
 
 	override protected void initialiseSlidersAndDicts(){
 		dict = new Dictionary<string, Slider>();
@@ -32,16 +35,59 @@ public class MenuController : AbstractController {
 		dict2.Add(optionsSlider, optionsSliderObj);
 		dict2.Add(exitSlider, exitSliderObj);
 
+		if(debug) GameController.State = startState;
+
+		// State machine to handle progression
 		if(GameController.State == GameController.START){
 			leftText.SetActive(false);
 			leftLock.SetActive(true);
+			leftTick.SetActive(false);
 			rightText.SetActive(false);
 			rightLock.SetActive(true);
+			rightTick.SetActive(false);
 		} else if (GameController.State == GameController.AFTER_TUTORIAL){
 			leftText.SetActive(true);
 			leftLock.SetActive(false);
+			leftTick.SetActive(false);
 			rightText.SetActive(true);
 			rightLock.SetActive(false);
+			rightTick.SetActive(false);
+		} else if (GameController.State == GameController.LEFT_FINISHED){
+			leftText.SetActive(false);
+			leftLock.SetActive(false);
+			leftTick.SetActive(true);
+			rightText.SetActive(true);
+			rightLock.SetActive(false);
+			rightTick.SetActive(false);
+			leftLight.GetComponent<Renderer>().material.color = Color.green;
+		} else if (GameController.State == GameController.RIGHT_FINISHED){
+			leftText.SetActive(true);
+			leftLock.SetActive(false);
+			leftTick.SetActive(false);
+			rightText.SetActive(false);
+			rightLock.SetActive(false);
+			rightTick.SetActive(true);
+			rightLight.GetComponent<Renderer>().material.color = Color.green;
+		} else if (GameController.State == GameController.LEFT_AND_RIGHT_FINISHED){
+			leftText.SetActive(false);
+			leftLock.SetActive(false);
+			leftTick.SetActive(true);
+			rightText.SetActive(false);
+			rightLock.SetActive(false);
+			rightTick.SetActive(true);
+			leftLight.GetComponent<Renderer>().material.color = Color.green;
+			rightLight.GetComponent<Renderer>().material.color = Color.green;
+			//Turn middle door
+		} else if (GameController.State == GameController.END){
+			leftText.SetActive(false);
+			leftLock.SetActive(false);
+			leftTick.SetActive(true);
+			rightText.SetActive(false);
+			rightLock.SetActive(false);
+			rightTick.SetActive(true);
+			leftLight.GetComponent<Renderer>().material.color = Color.green;
+			rightLight.GetComponent<Renderer>().material.color = Color.green;
+			//Process end here
 		}
 	}
 
@@ -53,6 +99,12 @@ public class MenuController : AbstractController {
 			} else {
 				if(activeSlider.Equals("scoreSlider")){
 					SceneManager.LoadScene(2);
+				}
+				if(activeSlider.Equals("leftSlider")){
+					SceneManager.LoadScene(4);
+				}
+				if(activeSlider.Equals("rightSlider")){
+					SceneManager.LoadScene(6);
 				}
 			}
 		} else {

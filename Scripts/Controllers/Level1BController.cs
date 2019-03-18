@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Level1BController : AbstractRController {
 
@@ -39,5 +41,14 @@ public class Level1BController : AbstractRController {
 		if(power.isCompleted()){
 			activate();
 		}
+	}
+
+	override protected void loadNextLevel(){
+		if(GameController.State == GameController.RIGHT_FINISHED){
+			GameController.State = GameController.LEFT_AND_RIGHT_FINISHED;
+		} else {
+			GameController.State = GameController.LEFT_FINISHED;
+		}
+		SceneManager.LoadScene(1);
 	}
 }

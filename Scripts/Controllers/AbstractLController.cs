@@ -10,7 +10,7 @@ public abstract class AbstractLController : MonoBehaviour {
 	protected int tubes = -1;
 	protected int filled = 0;
 	protected float timer = 0.0f;
-	protected float fillDuration = 4.0f;
+	protected float fillDuration = 2.5f;
 	protected bool complete = false;
 	public UpDownNavigation navigation;
 
@@ -49,4 +49,6 @@ public abstract class AbstractLController : MonoBehaviour {
 			filled++;
 		}
 	}
+
+	
 }
