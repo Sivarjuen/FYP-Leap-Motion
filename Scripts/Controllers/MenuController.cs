@@ -8,6 +8,7 @@ public class MenuController : AbstractController {
 
 	public GameObject leftSliderObj, rightSliderObj, scoreSliderObj, optionsSliderObj, exitSliderObj;
 	private Slider leftSlider, rightSlider, scoreSlider, optionsSlider, exitSlider;
+	public GameObject leftText, leftLock, rightText, rightLock;
 
 	override protected void initialiseSlidersAndDicts(){
 		dict = new Dictionary<string, Slider>();
@@ -30,6 +31,18 @@ public class MenuController : AbstractController {
 		dict2.Add(scoreSlider, scoreSliderObj);
 		dict2.Add(optionsSlider, optionsSliderObj);
 		dict2.Add(exitSlider, exitSliderObj);
+
+		if(GameController.State == GameController.START){
+			leftText.SetActive(false);
+			leftLock.SetActive(true);
+			rightText.SetActive(false);
+			rightLock.SetActive(true);
+		} else if (GameController.State == GameController.AFTER_TUTORIAL){
+			leftText.SetActive(true);
+			leftLock.SetActive(false);
+			rightText.SetActive(true);
+			rightLock.SetActive(false);
+		}
 	}
 
 	override protected void updateSliders(){
@@ -38,9 +51,8 @@ public class MenuController : AbstractController {
 				float elapsed = Time.time - timer;
 				dict[activeSlider].value = elapsed / hoverDuration;
 			} else {
-				if(activeSlider.Equals("leftSlider")){
+				if(activeSlider.Equals("scoreSlider")){
 					SceneManager.LoadScene(2);
-					//StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.Out, 1));
 				}
 			}
 		} else {

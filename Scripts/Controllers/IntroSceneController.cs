@@ -26,8 +26,7 @@ public class IntroSceneController : AbstractController {
 				float elapsed = Time.time - timer;
 				dict[activeSlider].value = elapsed / hoverDuration;
 			} else {
-				// SceneManager.LoadScene(1);
-				// StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.Out, 1));
+				SceneManager.LoadScene(1);
 			}
 		} else {
 			foreach(Slider slider in dict.Values){
@@ -53,7 +52,7 @@ public class IntroSceneController : AbstractController {
 		//buttonObj.SetActive(true);
 		//handModels.SetActive(true);
 		//leapMotion.SetActive(true);
-
+		GameController.State = GameController.START;
 		StartCoroutine("Intro");
 	}
 

@@ -1106,11 +1106,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -2471,6 +2471,10 @@ MonoBehaviour:
   scoreSliderObj: {fileID: 309160801}
   optionsSliderObj: {fileID: 449605853}
   exitSliderObj: {fileID: 2027866684}
+  leftText: {fileID: 2069717969}
+  leftLock: {fileID: 6196447}
+  rightText: {fileID: 237806293}
+  rightLock: {fileID: 16946601}
 --- !u!4 &862776173
 Transform:
   m_ObjectHideFlags: 0
@@ -4545,11 +4549,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:

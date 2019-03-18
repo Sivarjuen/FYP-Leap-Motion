@@ -227,7 +227,7 @@ public class Tutorial2Controller : MonoBehaviour {
 	}
 
 	private void loadLevel(){
-		// Load level 1 here
-		// TODO
+		GameController.State = GameController.AFTER_TUTORIAL;
+		SceneManager.LoadScene(1);
 	}
 }

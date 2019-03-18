@@ -225,7 +225,6 @@ public class Tutorial1Controller : MonoBehaviour {
 	}
 
 	private void loadLevel(){
-		// Load level 1 here
-		// TODO
+		SceneManager.LoadScene(3);
 	}
 }
