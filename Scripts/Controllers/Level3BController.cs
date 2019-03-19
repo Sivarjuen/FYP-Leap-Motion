@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Level3BController : AbstractRController {
 
@@ -59,6 +61,7 @@ public class Level3BController : AbstractRController {
 	}
 
 	override protected void loadNextLevel(){
-		//todo
+		GameController.State = GameController.END;
+		SceneManager.LoadScene(1);
 	}
 }

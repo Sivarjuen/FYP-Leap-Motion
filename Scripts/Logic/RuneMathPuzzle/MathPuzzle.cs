@@ -38,4 +38,9 @@ public class MathPuzzle : MonoBehaviour {
 		active = true;
 		gameObject.SetActive(true);
 	}
+
+	public void manuallyComplete(){
+		completed = true;
+		highlight.color = Color.green;
+	}
 }

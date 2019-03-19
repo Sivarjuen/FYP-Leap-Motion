@@ -44,11 +44,7 @@ public class Level1BController : AbstractRController {
 	}
 
 	override protected void loadNextLevel(){
-		if(GameController.State == GameController.RIGHT_FINISHED){
-			GameController.State = GameController.LEFT_AND_RIGHT_FINISHED;
-		} else {
-			GameController.State = GameController.LEFT_FINISHED;
-		}
+		GameController.State = GameController.LEFT_FINISHED;
 		SceneManager.LoadScene(1);
 	}
 }

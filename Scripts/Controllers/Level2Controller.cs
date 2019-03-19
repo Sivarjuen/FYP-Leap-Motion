@@ -2,10 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Level2Controller : MonoBehaviour {
 
 	private bool levelCompleted = false; // Completion state of entire level
+	public UpDownNavigation navigation;
+	public LeftRightNavigation horz_navigation;
+	public Image door;
+	private static float doorFillDuration = 5.0f;
+	private float timer = 0.0f;
+	private bool fillingDoor = false;
 
 	[Header("Level 2-1 Attributes")]
 	public bool firstLevel = true;
@@ -84,8 +92,30 @@ public class Level2Controller : MonoBehaviour {
 					turnLightOn(3);
 				}
 			}
-		} else{
-			Debug.Log("COMPLETE");
+		} else {
+			navigation.activate();
+			navigation.moveCameraUpandLock();
+			horz_navigation.deactivate();
+			if(!fillingDoor){
+				timer = Time.time;
+				fillingDoor = true;
+			}
+			processCompletion();
+		}
+	}
+
+	private void processCompletion(){
+		float elapsed = Time.time - timer;
+		if(door.fillAmount < 1.0f){
+			door.fillAmount = elapsed / doorFillDuration;
+		}
+		if(door.fillAmount >= 1.0f){
+			if(firstLevel){
+				SceneManager.LoadScene(7);
+			} else {
+				GameController.State = GameController.RIGHT_FINISHED;
+				SceneManager.LoadScene(1);
+			}
 		}
 	}
 

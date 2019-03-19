@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MenuController : AbstractController {
 
@@ -10,8 +11,16 @@ public class MenuController : AbstractController {
 	private Slider leftSlider, rightSlider, scoreSlider, optionsSlider, exitSlider;
 	public GameObject leftText, leftLock, leftTick, rightText, rightLock, rightTick;
 	public GameObject leftLight, rightLight;
+	public GameObject handModels, leapMotion, middleDoor, centerMenu, targetPosition;
 	public bool debug = true;
 	public int startState = 0;
+	private bool animateDoor = false;
+	private Quaternion targetRotation;
+	public Image door;
+	private static float doorFillDuration = 5.0f;
+	private float doorTimer = 0.0f;
+	private bool fillingDoor = false;
+	public TextMeshProUGUI text;
 
 	override protected void initialiseSlidersAndDicts(){
 		dict = new Dictionary<string, Slider>();
@@ -49,8 +58,8 @@ public class MenuController : AbstractController {
 			leftText.SetActive(true);
 			leftLock.SetActive(false);
 			leftTick.SetActive(false);
-			rightText.SetActive(true);
-			rightLock.SetActive(false);
+			rightText.SetActive(false);
+			rightLock.SetActive(true);
 			rightTick.SetActive(false);
 		} else if (GameController.State == GameController.LEFT_FINISHED){
 			leftText.SetActive(false);
@@ -61,23 +70,16 @@ public class MenuController : AbstractController {
 			rightTick.SetActive(false);
 			leftLight.GetComponent<Renderer>().material.color = Color.green;
 		} else if (GameController.State == GameController.RIGHT_FINISHED){
-			leftText.SetActive(true);
-			leftLock.SetActive(false);
-			leftTick.SetActive(false);
-			rightText.SetActive(false);
-			rightLock.SetActive(false);
-			rightTick.SetActive(true);
-			rightLight.GetComponent<Renderer>().material.color = Color.green;
-		} else if (GameController.State == GameController.LEFT_AND_RIGHT_FINISHED){
 			leftText.SetActive(false);
 			leftLock.SetActive(false);
 			leftTick.SetActive(true);
 			rightText.SetActive(false);
 			rightLock.SetActive(false);
 			rightTick.SetActive(true);
-			leftLight.GetComponent<Renderer>().material.color = Color.green;
 			rightLight.GetComponent<Renderer>().material.color = Color.green;
-			//Turn middle door
+			leftLight.GetComponent<Renderer>().material.color = Color.green;
+			targetRotation = middleDoor.transform.rotation * Quaternion.Euler(0, 0, 180);
+			StartCoroutine("UnlockMiddleDoor");
 		} else if (GameController.State == GameController.END){
 			leftText.SetActive(false);
 			leftLock.SetActive(false);
@@ -87,8 +89,20 @@ public class MenuController : AbstractController {
 			rightTick.SetActive(true);
 			leftLight.GetComponent<Renderer>().material.color = Color.green;
 			rightLight.GetComponent<Renderer>().material.color = Color.green;
-			//Process end here
+			text.text = "You have beaten \n THE COMPLEX";
 		}
+	}
+
+	IEnumerator UnlockMiddleDoor() {
+		handModels.SetActive(false);
+		leapMotion.SetActive(false);
+		centerMenu.SetActive(false);
+		yield return new WaitForSeconds(1);
+		animateDoor = true;
+		yield return new WaitForSeconds(10);
+		doorTimer = Time.time;
+		fillingDoor = true;
+		yield return null;
 	}
 
 	override protected void updateSliders(){
@@ -111,6 +125,20 @@ public class MenuController : AbstractController {
 			foreach(Slider slider in dict.Values){
 				slider.value = 0.0f;
 				deactivateSliders();
+			}
+		}
+		if(animateDoor){
+			middleDoor.transform.position = Vector3.Lerp(middleDoor.transform.position, targetPosition.transform.position, 1.0f * Time.deltaTime);
+			middleDoor.transform.rotation = Quaternion.Lerp(middleDoor.transform.rotation, targetRotation, .5f * Time.deltaTime);
+		}
+
+		if(fillingDoor){
+			float elapsed = Time.time - doorTimer;
+			if(door.fillAmount < 1.0f){
+				door.fillAmount = elapsed / doorFillDuration;
+			}
+			if(door.fillAmount >= 1.0f){
+				SceneManager.LoadScene(8);
 			}
 		}
 	}

@@ -9,8 +9,7 @@ public static class GameController {
 	public static int AFTER_TUTORIAL = 1;
 	public static int LEFT_FINISHED = 2;
 	public static int RIGHT_FINISHED = 3;
-	public static int LEFT_AND_RIGHT_FINISHED = 4;
-	public static int END = 5;
+	public static int END = 4;
 
 	public static int State{
 		get {

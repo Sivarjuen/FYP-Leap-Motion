@@ -17,7 +17,14 @@ public class MathSolution : MonoBehaviour {
 	void Start() {
 		completed = false;
 		values = new int[]{red, blue, purple, green};
+	}
+
+	public void activate(){
 		puzzles[0].activate();
+	}
+
+	public void manuallyComplete(){
+		puzzles[finished].manuallyComplete();
 	}
 
 	void Update(){

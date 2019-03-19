@@ -15,12 +15,6 @@ public class RomanMathPuzzle : MonoBehaviour {
 		completed = false;
 	}
 
-	void Update() {
-		if(completed){
-			Debug.Log("Finished Roman Puzzle!");
-		}
-	}
-
 	public bool isCompleted(){
 		return completed;
 	}
